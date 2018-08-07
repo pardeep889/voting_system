@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 07, 2018 at 11:35 AM
+-- Generation Time: Aug 07, 2018 at 02:29 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -21,6 +21,15 @@ SET time_zone = "+00:00";
 --
 -- Database: `voting_system`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `loginProcedure` (IN `user` VARCHAR(50), IN `pass` VARCHAR(255))  NO SQL
+select * from vs_users where vs_users.username = user and vs_users.password = pass and role = 3$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -56,6 +65,13 @@ CREATE TABLE `vs_users` (
   `status` int(2) NOT NULL,
   `role` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vs_users`
+--
+
+INSERT INTO `vs_users` (`id`, `username`, `password`, `status`, `role`) VALUES
+(1, 'pre_admin', '123', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -142,7 +158,7 @@ ALTER TABLE `vs_fingerprints`
 -- AUTO_INCREMENT for table `vs_users`
 --
 ALTER TABLE `vs_users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `vs_voters`
