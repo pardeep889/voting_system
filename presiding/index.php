@@ -1,9 +1,17 @@
 <?php include "header.php"?>
+<?php
+include "nav.php";
+//if user is logged in
+if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
+    header('location: pre_dashboard.php');
+}
+else{
+?>
 
   <body>
 
     <!-- Navigation -->
-<?php include "nav.php"; ?>
+
     <!-- Page Content -->
     <div class="container">
       <!-- Heading Row -->
@@ -14,7 +22,7 @@
         <!-- /.col-lg-8 -->
         <div class="col-lg-4">
           <h1>Business Name or Tagline</h1>
-          <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+          <p>This is a template that is great for small businesses. It doesn t have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
           <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
         </div>
         <!-- /.col-md-4 -->
@@ -74,7 +82,7 @@
     <!-- /.container -->
 
     <!-- Footer -->
-<?php include "footer.php"; ?>
+<?php include "footer.php"; } ?>
 
   </body>
 

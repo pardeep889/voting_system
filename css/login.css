@@ -1,13 +1,16 @@
-body#LoginForm{ background-image:url("../img/login_bg.jpg");
-background-repeat:no-repeat;
-background-position:center;
-background-size:cover;
+body#LoginForm{
+  /*background-image:url("../img/login_bg.jpg");*/
+  background-repeat:no-repeat;
+  background-color: #DCF3E3;
+  background-position:center;
+  background-size:cover;
 }
 
 .form-heading { color:#fff; font-size:23px;}
 .panel h2{ color:#444444; font-size:18px; margin:0 0 8px 0;}
 .panel p { color:#777777; font-size:14px; margin-bottom:30px; line-height:24px;}
 .login-form .form-control {
+
   background: #f7f7f7 none repeat scroll 0 0;
   border: 1px solid #d4d4d4;
   border-radius: 4px;
@@ -16,6 +19,7 @@ background-size:cover;
   line-height: 50px;
 }
 .main-div {
+  box-shadow: 2px 3px 10px -2px;
   background: #ffffff none repeat scroll 0 0;
   border-radius: 2px;
   margin: 10px auto 30px;
