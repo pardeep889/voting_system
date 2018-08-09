@@ -15,7 +15,6 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
 
         <?php
         if(isset($_POST['search'])){
-
         if("" == trim($_POST['search'])) {
         }
         else{
@@ -30,6 +29,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                 <tr>
                     <th>#</th>
                     <th>county</th>
+                    <th>Voter Name</th>
                     <th>Age</th>
                     <th>Gender</th>
                     <th>Verified ?</th>
@@ -43,6 +43,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                     <tr>
                         <td><?php echo $row['voter_uniqueID']; ?></td>
                         <td><?php echo $row['county_name']; ?></td>
+                        <td><?php echo $row['voter_name']; ?></td>
                         <td><?php echo $row['voter_age']; ?></td>
                         <td><?php echo $row['voter_gender']; ?></td>
                         <td><?php
@@ -110,10 +111,14 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                 <div class="modal-content">
                     <div class="modal-header1">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 class="modal-title">Update Voter</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Some text in the modal.</p>
+                       <form>
+                           <div class="form-group">
+                               <input type="text" name="county_name" id="county_name" class="form-control">
+                           </div>
+                       </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

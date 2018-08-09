@@ -12,34 +12,48 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ) {
         <table class="table">
             <thead class="thead-dark">
             <tr>
-                <th>#</th>
+                <th>Voter ID</th>
                 <th>Voter name</th>
                 <th>Age</th>
                 <th>Gender</th>
-                <th></th>
-                <th>Country</th>
-                <th>Gender</th>
-                <th>Example</th>
-                <th>Example</th>
-                <th>Example</th>
-                <th>Example</th>
+                <th>County</th>
+                <th>Center code</th>
+                <th>Voter Email</th>
+                <th>Valid ?</th>
+
             </tr>
             </thead>
+            <?php
+            $data = mysqli_query($conn,"CALL getVoters()") or die(mysqli_error($conn));
+                while($voters = mysqli_fetch_assoc($data))
+                {
+//                    echo json_encode($voters);
+                ?>
             <tbody>
             <tr>
-                <td>1</td>
-                <td>Anna</td>
-                <td>Pitt</td>
-                <td>35</td>
-                <td>New York</td>
-                <td>USA</td>
-                <td>Female</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
+                <td><?php echo $voters['voter_uniqueID']; ?></td>
+                <td><?php echo $voters['voter_name']; ?></td>
+                <td><?php echo $voters['voter_age']; ?></td>
+                <td><?php echo $voters['voter_gender']; ?></td>
+                <td><?php echo $voters['county_name']; ?></td>
+                <td><?php echo $voters['center_code']; ?></td>
+                <td><?php echo $voters['voter_email']; ?></td>
+                <td><?php if($voters['voter_status'] == 1){
+                            echo "<span class='text-success'>Valid";
+                    }else if($voters['voter_status'] == 0) {
+                        echo "<span class='text-warning'>Inactive";
+                    }
+
+                        else if($voters['voter_status'] == 2){
+                        echo "<span class='text-danger'>Flagged";
+                    }
+                        ?></td>
+
             </tr>
             </tbody>
+                    <?php
+                        }
+                    ?>
         </table>
 
     </div>

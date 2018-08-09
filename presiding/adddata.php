@@ -96,7 +96,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="name">Insert Record</label> <br>
+
                             <input type="submit" class="btn btn-dark" value="Add new voter">
                         </div>
 

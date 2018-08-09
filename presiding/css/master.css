@@ -55,3 +55,10 @@
   border-top-left-radius: .3rem;
   border-top-right-radius: .3rem;
 }
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}

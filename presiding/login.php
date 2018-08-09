@@ -35,5 +35,29 @@ else{
       <p class="botto-text"> </p>
   </div>
 </div>
+  <script>
+      $("#login_button").click(function(){
+          var username = $("#inputUsername").val();
+          var password = $("#inputPassword").val();
+          var data = { "username":  username, "password": password };
+          $.ajax({
+              type: "GET",
+              url: 'function.php?select=login',
+              data: data,
+              success: function(data){
+                  if(data == 'fails'){
+                      $("#error").text("Please enter valid username or password");
+                  }
+                  else if (data == 'success') {
+                      location.assign("pre_dashboard.php");
+                  }
+                  else{
+                      alert("something went wrong");
+                  }
+              }
+          });
+      });
+
+  </script>
   <?php include "footer.php"; }?>
 </body>
