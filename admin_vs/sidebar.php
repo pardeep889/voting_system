@@ -5,7 +5,7 @@
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="index-2.html">
+                    <a class="active" href="index.php">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
@@ -13,23 +13,25 @@
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-laptop"></i>
-                        <span>Layouts</span>
+                        <span>Manage County</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="boxed_page.html">Boxed Page</a></li>
-                        <li><a href="horizontal_menu.html">Horizontal Menu</a></li>
-                        <li><a href="language_switch.html">Language Switch Bar</a></li>
+                        <li><a href="addCounty.php">Add County</a></li>
+                        <li><a href="view_county.php">View County</a></li>
+
                     </ul>
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
-                        <span>UI Elements</span>
+                        <span>Manage District</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="general.html">General</a></li>
-                        <li><a href="buttons.html">Buttons</a></li>
-<li><a href="typography.html">Typography</a></li>
+                        <li><a href="addDistrict.php">Add District</a></li>
+                        <li><a href="viewDistrict.php">View District</a></li>
+                        <li><a href="addpresiding.php">Add Presiding Officer</a></li>
+                        <li><a href="language_switch.html">Add Telecenter</a></li>
+                        <li><a href="typography.html">Typography</a></li>
                         <li><a href="widget.html">Widget</a></li>
                         <li><a href="slider.html">Slider</a></li>
                         <li><a href="tree_view.html">Tree View</a></li>
@@ -39,19 +41,14 @@
                         <li><a href="draggable_portlet.html">Draggable Portlet</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="fontawesome.html">
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Fontawesome </span>
-                    </a>
-                </li>
+
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-th"></i>
-                        <span>Data Tables</span>
+                        <span>Manage Precincts</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="basic_table.html">Basic Table</a></li>
+                        <li><a href="addPrecincts.php">Add Precints</a></li>
                         <li><a href="responsive_table.html">Responsive Table</a></li>
                         <li><a href="dynamic_table.html">Dynamic Table</a></li>
                         <li><a href="editable_table.html">Editable Table</a></li>

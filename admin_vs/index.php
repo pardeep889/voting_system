@@ -1,9 +1,7 @@
 <?php
 require "session.php";
 if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1 ){
-
 include "header.php";
-
 ?>
 <body>
 <section id="container">

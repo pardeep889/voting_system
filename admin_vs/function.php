@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;
   $qr =$conn->query("CALL loginProcedureForAdmin('".$username."', '".$hash_pass."')");
   $res = mysqli_num_rows($qr);
   if($res>0){
-     $result = $qr->fetch_assoc(); 
+     $result = $qr->fetch_assoc();
      $_SESSION['id'] = $result['id'];
      $_SESSION['user_role'] = $result['role'];
 
@@ -29,25 +29,136 @@ if($_GET['select'] == 'logout') {
   echo "success";
 }
 
-//show voter
-if($_GET['select'] == 'show_voter'){
+
+//add new county
+if($_GET['select'] == 'countyAdd'){
     require "../db/conn.php";
     require "session.php";
-    $unique_id = $_GET['data'];
-    $sql = "SELECT * FROM vs_voters where voter_uniqueID = '$unique_id'";
-    $result = mysqli_query($conn,$sql);
-    $response=[];
-    if (mysqli_num_rows($result) > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            $response=$row;
-        }
+    $county = $_GET['county'];
+
+    $sql = "INSERT INTO vs_county(county_name, status, created_at, updated_at) values ('$county',1, NOW(),NOW())";
+    if ($conn->query($sql) === TRUE) {
+        $data['message'] = "success";
     }
     else{
-        echo "fails";
+        $data['message'] = "fails";
+    }
+    header("content-type:application/json");
+    echo json_encode($data);
+
+}
+
+
+//change county status
+if($_GET['select'] == 'countyStatus'){
+    require "../db/conn.php";
+    require "session.php";
+    $id = $_GET['id'];
+    if($_SESSION['user_role'] == 1){
+        $sql = "UPDATE vs_county SET status = IF(status=1, 0, 1) where id = '$id'";
+        if ($conn->query($sql) === TRUE) {
+            $data['message'] = "success";
+        }else{
+            $data['message'] = "fails";
+        }
+    }else{
+        $data['message'] = "unauth";
+    }
+    header("content-type:application/json");
+    echo json_encode($data);
+}
+
+// update county call
+if($_GET['select'] == 'countyUpdate'){
+    require "../db/conn.php";
+    require "session.php";
+    $id = $_GET['id'];
+    if($_SESSION['user_role'] == 1) {
+        $sql = "SELECT * FROM vs_county where id = '$id'";
+        $result = mysqli_query($conn,$sql);
+        $response=[];
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $response=$row;
+            }
+        }
+        else{
+            echo "fails";
+        }
     }
     header("content-type:application/json");
     echo json_encode($response);
+}
+
+//update county name
+if($_GET['select'] == 'countyUpdateName'){
+    require "../db/conn.php";
+    require "session.php";
+    $name = $_GET['name'];
+    $id = $_GET['id'];
+    if($_SESSION['user_role'] == 1){
+        $sql = "UPDATE vs_county SET county_name = '$name' where id = '$id'";
+        if ($conn->query($sql) === TRUE) {
+            $data['message'] = "success";
+        }else{
+            $data['message'] = "fails";
+        }
+    }else{
+        $data['message'] = "unauth";
+    }
+    header("content-type:application/json");
+    echo json_encode($data);
+}
+
+//add district
+if($_GET['select']== 'districtAdd'){
+    require "../db/conn.php";
+    require "session.php";
+    if($_SESSION['user_role'] == 1) {
+        $id = $_GET['id'];
+        $meg_area = $_GET['meg_area'];
+        $dname = $_GET['dname'];
+        $pre = $_GET['pre'];
+        $poll = $_GET['poll'];
+
+        $sql = "INSERT INTO vs_district(destrict_name, precincts, polling_places, county_id,status, magisterial_area ,created_at, updated_at)
+                VALUES('$dname', '$pre','$poll', '$id',1, '$meg_area', NOW(),NOW()) ";
+        if ($conn->query($sql) === TRUE) {
+            $data["message"] = "success";
+        }
+        else{
+            $data["message"] = "fails";
+        }
+
+
+    }
+    else{
+        $data['message'] = "unauth";
+    }
+    header("content-type:application/json");
+    echo json_encode($data);
+}
+
+//add precinct
+if($_GET['select'] == 'precinctAdd'){
+    require "../db/conn.php";
+    require "session.php";
+        $c_id =$_GET['c_id'];
+        $d_id = $_GET['district_id'];
+        $name = $_GET['precinct'];
+        $address =$_GET['address'];
+        $sql = "INSERT INTO vs_precincts(precinct_name, precinct_address, status, county_id,created_at,updated_at)
+                VALUES('$name','$address',1,'$c_id', NOW(), NOW())";
+        if($conn->query($sql) === TRUE ){
+            $data['message'] = "success";
+        }
+        else{
+            $data['message'] = "fails";
+        }
+
+    header("content-type:application/json");
+    echo json_encode($data);
 }
 
 //forgot password
