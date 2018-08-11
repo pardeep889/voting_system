@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 09, 2018 at 02:35 PM
+-- Generation Time: Aug 11, 2018 at 02:28 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -39,7 +39,78 @@ END$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `loginProcedure` (IN `user` VARCHAR(50), IN `pass` VARCHAR(255))  NO SQL
 select id,role  from vs_users where vs_users.username = user and vs_users.password = pass and role = 3 and status = 1$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `loginProcedureForAdmin` (IN `user` VARCHAR(50), IN `hash_pass` VARCHAR(255))  BEGIN
+select id,role  from vs_users 
+where vs_users.username = user and vs_users.password = hash_pass and 
+role = 1 and status = 1;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `new_procedure` ()  BEGIN
+select * from vs_voters;
+END$$
+
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vs_county`
+--
+
+CREATE TABLE `vs_county` (
+  `id` int(10) NOT NULL,
+  `county_name` varchar(255) NOT NULL,
+  `status` int(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vs_county`
+--
+
+INSERT INTO `vs_county` (`id`, `county_name`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Bomi', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(2, 'Bong', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(3, 'Grand Bassa', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(4, 'Grand Cape Mount', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(5, 'Grand Gedeh', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(6, 'Grand Kru', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(7, 'Lofa', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(8, 'Margibi', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(9, 'Maryland', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(10, 'Montserrado', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(11, 'Nimba', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(12, 'Rivercess', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(13, 'Sinoe', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(14, 'River Gee', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(15, 'Gbarpolu', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
+(16, 'test_county', 1, '2018-08-11 11:55:41', '2018-08-11 11:55:41');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vs_district`
+--
+
+CREATE TABLE `vs_district` (
+  `id` int(10) NOT NULL,
+  `district_name` varchar(255) NOT NULL,
+  `precincts` int(20) NOT NULL,
+  `polling_places` int(20) NOT NULL,
+  `county_id` int(10) NOT NULL,
+  `status` int(2) NOT NULL,
+  `magisterial_area` varchar(522) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vs_district`
+--
+
+INSERT INTO `vs_district` (`id`, `district_name`, `precincts`, `polling_places`, `county_id`, `status`, `magisterial_area`, `created_at`, `updated_at`) VALUES
+(1, 'name_district', 10, 12, 2, 1, 'Bong (Lower)', '2018-08-11 10:20:34', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -65,6 +136,29 @@ CREATE TABLE `vs_fingerprints` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `vs_precincts`
+--
+
+CREATE TABLE `vs_precincts` (
+  `id` int(11) NOT NULL,
+  `precinct_name` varchar(255) NOT NULL,
+  `precinct_address` varchar(1000) NOT NULL,
+  `status` int(2) NOT NULL,
+  `county_id` int(10) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vs_precincts`
+--
+
+INSERT INTO `vs_precincts` (`id`, `precinct_name`, `precinct_address`, `status`, `county_id`, `created_at`, `updated_at`) VALUES
+(1, 'new', 'address', 1, 1, '2018-08-11 11:51:54', '2018-08-11 11:51:54');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vs_users`
 --
 
@@ -82,7 +176,8 @@ CREATE TABLE `vs_users` (
 --
 
 INSERT INTO `vs_users` (`id`, `username`, `password`, `email`, `status`, `role`) VALUES
-(1, 'pre_admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'pardeepprotolabz@gmail.com', 1, 3);
+(1, 'pre_admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'pardeepprotolabz@gmail.com', 1, 3),
+(2, 'admin', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'pardeep889@hotmail.com', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -143,9 +238,27 @@ CREATE TABLE `vs_votes` (
 --
 
 --
+-- Indexes for table `vs_county`
+--
+ALTER TABLE `vs_county`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `vs_district`
+--
+ALTER TABLE `vs_district`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `vs_fingerprints`
 --
 ALTER TABLE `vs_fingerprints`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `vs_precincts`
+--
+ALTER TABLE `vs_precincts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -173,16 +286,34 @@ ALTER TABLE `vs_votes`
 --
 
 --
+-- AUTO_INCREMENT for table `vs_county`
+--
+ALTER TABLE `vs_county`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `vs_district`
+--
+ALTER TABLE `vs_district`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `vs_fingerprints`
 --
 ALTER TABLE `vs_fingerprints`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `vs_precincts`
+--
+ALTER TABLE `vs_precincts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `vs_users`
 --
 ALTER TABLE `vs_users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `vs_voters`
