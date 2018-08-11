@@ -101,7 +101,7 @@ if($_GET['select'] == 'forgot_request') {
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Forgot password request Voting System';
             $mail->Body = "<html>
-                                <head>                               
+                                <head>
                                 </head>
                                 <body>
                                             <h1>Voting System Forgot Password</h1>
@@ -110,7 +110,7 @@ if($_GET['select'] == 'forgot_request') {
                                                     <h5 class='text-success'>Your OTP is: ".$otp."</h5>
                                                     <p class='text-danger'>If you did not raise this request you simply can ignore this email</p>
                                              </div>
-                                  </body> 
+                                  </body>
                            </html>";
             $mail->AltBody = 'alt body ';
             $mail->send();
