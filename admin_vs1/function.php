@@ -261,8 +261,8 @@ use PHPMailer\PHPMailer\Exception;
         $d_id = $_GET['district_id'];
         $name = $_GET['precinct'];
         $address =$_GET['address'];
-        $sql = "INSERT INTO vs_precincts(precinct_name, precinct_address, status, county_id,created_at,updated_at)
-                    VALUES('$name','$address',1,'$c_id', NOW(), NOW())";
+        $sql = "INSERT INTO vs_precincts(precinct_name, precinct_address, status, county_id,district_id,created_at,updated_at)
+                    VALUES('$name','$address',1,'$c_id','$d_id', NOW(), NOW())";
         if($conn->query($sql) === TRUE ){
             $data['message'] = "success";
         }
@@ -578,15 +578,52 @@ use PHPMailer\PHPMailer\Exception;
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
 //                    echo json_encode($row);
-                    $response=$row;
-                    echo '<option class="district_id" value="'.$row['id'].'">'.$row['district_name'].'</option>';
+                    $response[]=$row;
+//                    echo '<option  data-subtext="'.$row['id'].'" class="district_id" value="'.$row['id'].'">'.$row['district_name'].'</option>';
                 }
+
             }
             else{
-                echo '<option class="district_id" value="0">No Record</option>';
+                $response['no'] =  'fails';
+
             }
+            header("content-type:application/json");
+            echo json_encode($response);
+
+
         }
     }
+
+if($_GET['select'] == 'filterPrecinct'){
+    require "../db/conn.php";
+    require "session.php";
+    $id = $_GET['id'];
+    if($_SESSION['user_role'] == 1) {
+        $sql = "SELECT * FROM `vs_precincts` WHERE district_id = '$id'";
+//            $sql = "SELECT id,district_name FROM vs_district where county_id = '$id'";
+        $result = mysqli_query($conn,$sql);
+        $response=[];
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+//                    echo json_encode($row);
+                $response[]=$row;
+
+
+//                    echo '<option  data-subtext="'.$row['id'].'" class="district_id" value="'.$row['id'].'">'.$row['district_name'].'</option>';
+            }
+
+        }
+        else{
+            $response['no'] =  'fails';
+
+        }
+        header("content-type:application/json");
+        echo json_encode($response);
+
+
+    }
+}
 
 
 // ----------Filters End--------

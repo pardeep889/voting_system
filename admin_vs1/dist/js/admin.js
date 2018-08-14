@@ -387,7 +387,7 @@ $(document).ready(function() {
                 data: data,
                 success: function (data) {
                     if(data.message == "success"){
-                        swal("Polling Place Added", "{Polling Place is Added successfully !", "success")
+                        swal("Polling Place Added", "Polling Place is Added successfully !", "success")
                             .then((value) => {
                                 if(value == ""){
                                     location.reload();
@@ -419,9 +419,18 @@ $(document).ready(function() {
             url: "function.php?select=filterDistrict",
             data: data,
             success: function (data) {
-                console.log(data);
 
-                $('.district_select').html(data);
+                if(data.no == 'fails'){
+                        var html = '<option>No Record</option>'
+                }
+                else{
+                    var html  = '<option selected disabled>Select District</option>';
+                    $.each(data, function(key,value){
+                        html+= '<option class="district_id" value="'+value.id+'">'+value.district_name+'</option>';
+                    });
+
+                }
+                        $('#inlineFormCustomSelect1').html(html);
 
                 // $.each(data, function (key,val) {
                 //     console.log(key+val);
@@ -432,6 +441,40 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('.district_filter').on('change', function() {
+    var id =  this.value ;
+    // alert(id);
+    data = { "id": id };
+    $.ajax({
+        type: "GET",
+        url: "function.php?select=filterPrecinct",
+        data: data,
+        success: function (data) {
+
+            if(data.no == 'fails'){
+                var html = '<option>No Record</option>'
+            }
+            else{
+                var html  = '';
+                var html  = '<option selected disabled>Select Precinct</option>';
+                $.each(data, function(key,value){
+                    html+= '<option class="precinct_id" value="'+value.id+'">'+value.precinct_name+'</option>';
+                });
+
+            }
+            $('.precinct_select').html(html);
+
+            // $.each(data, function (key,val) {
+            //     console.log(key+val);
+            // })
+
+            // $(".district_select").html('<option class="district_id" value="'+data.id+'">'+data.district_name+'</option>');
+
+        }
+    });
+});
+
 
 // ----------Filters End--------
 

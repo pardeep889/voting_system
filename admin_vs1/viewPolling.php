@@ -26,7 +26,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    View District
+                    View Polling Places
                     <small>Control panel</small>
                 </h1>
                 <ol class="breadcrumb">

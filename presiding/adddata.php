@@ -2,6 +2,7 @@
 include "header.php";
 include "nav.php";
 include "session.php";
+include "../db/conn.php";
 if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
     ?>
     <script type="text/javascript">
@@ -11,21 +12,39 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
     </script>
     <div class="container">
         <h2 class="text-center large-heading-margin-top">Add New Voter</h2>
+        <?php $id = $_SESSION['polling_place'];
+
+    $sql = "SELECT pol.county_id,pol.district_id,pol.precinct_id,u.polling_placeID 
+      from vs_users u inner join vs_polling pol on u.polling_placeID = pol.id where u.polling_placeID = '$id'";
+
+        $result = mysqli_query($conn,$sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo json_encode($row);
+     ?>
+
+
         <div class="pre_background box-form">
             <form class="form" action="register.php" method="post">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="name">Country Name <span class="text-danger">*</span></label>
-                            <input type="text" name="county_name" class="form-control" required>
-                        </div>
+                            <input type="hidden" name="c_id" value="<?php echo $row['county_id'];?>">
+                            <input type="hidden" name="d_id" value="<?php echo $row['district_id'];?>">
+                            <input type="hidden" name="p_id" value="<?php echo $row['precinct_id'];?>">
+                            <input type="hidden" name="pol_id" value="<?php echo $id;?>">
 
+                        </div>
+<?php
+}
+}
+
+ ?>
                     </div>
                     <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="name">Center Code <span class="text-danger">*</span></label>
-                            <input type="text" name="center_code" class="form-control" required>
-                        </div>
+
                     </div>
                 </div>
                 <div class="row">
@@ -50,7 +69,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="age">Voter Age <span class="text-danger">*</span></label>
-                            <input type="text" name="voter_age" class="form-control" required>
+                            <input type="number" min="12" name="voter_age" class="form-control" required>
                         </div>
 
                     </div>

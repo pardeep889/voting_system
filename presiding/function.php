@@ -14,6 +14,7 @@ use PHPMailer\PHPMailer\Exception;
      $result = $qr->fetch_assoc();
      $_SESSION['id'] = $result['id'];
      $_SESSION['user_role'] = $result['role'];
+     $_SESSION['polling_place'] = $result['polling_placeID'];
      echo "success";
   }
   else{

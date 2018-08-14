@@ -79,26 +79,8 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
 
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Select District</label>
 
-<!--                    <select id="select-gear" class="demo-default" multiple placeholder="Select gear...">-->
-<!--                        <option value="">Select gear...</option>-->
-<!--                        <optgroup label="Climbing">-->
-<!--                            <option value="pitons">Pitons</option>-->
-<!--                            <option value="cams">Cams</option>-->
-<!--                            <option value="nuts">Nuts</option>-->
-<!--                            <option value="bolts">Bolts</option>-->
-<!--                            <option value="stoppers">Stoppers</option>-->
-<!--                            <option value="sling">Sling</option>-->
-<!--                        </optgroup>-->
-<!--                        <optgroup label="Skiing">-->
-<!--                            <option value="skis">Skis</option>-->
-<!--                            <option value="skins">Skins</option>-->
-<!--                            <option value="poles">Poles</option>-->
-<!--                        </optgroup>-->
-<!--                    </select>-->
 
-
-
-                    <select class="form-control mr-sm-2 district_select" id="inlineFormCustomSelect" style="color:#337ab7;  font-weight: bold;">
+                    <select class="form-control mr-sm-2 district_select" id="inlineFormCustomSelect1" style="color:#337ab7;  font-weight: bold;">
 
                                <option class="district_id" value="0" selected>Select District</option>
                     </select>

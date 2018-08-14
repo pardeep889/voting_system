@@ -2,8 +2,6 @@
 include "session.php";
 include "../db/conn.php";
 if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
-$county_name = $_POST['county_name'];
-$center_code = $_POST['center_code'];
 $voter_name = $_POST['voter_name'];
 $voter_gender = $_POST['voter_gender'];
 $voter_email = $_POST['voter_email'];
@@ -19,8 +17,12 @@ $voter_verifyStatus = 0;
 $voter_role = 0;
 $voter_status = 1;
 $voter_age = $_POST['voter_age'];
+$c_id = $_POST['c_id'];
+$d_id = $_POST['d_id'];
+$p_id = $_POST['p_id'];
+$pol_id = $_POST['pol_id'];
 
-    $qr = mysqli_query($conn,"CALL addNewVoter('".$county_name."','".$center_code."', '".$voter_name."', '".$voter_gender."'
+    $qr = mysqli_query($conn,"CALL addNewVoter('".$c_id."','".$d_id."','".$p_id."','".$pol_id."','".$voter_name."', '".$voter_gender."'
             , '".$voter_age."', '".$voter_email."', '".$voter_contactNO."', '".$voter_address."', '".$voter_photo."', '".$voter_uniqueID."', '".$voter_barcode."'
             , '".$voter_verifyStatus."', '".$voter_status."', '".$voter_role."', '".$created_at."', '".$updated_at."')") or die(mysqli_error($conn));
 

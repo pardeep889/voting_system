@@ -19,7 +19,13 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
         }
         else{
             $search = $_POST['search'];
-            $sql = "SELECT * FROM vs_voters where voter_uniqueID = '$search'";
+//            $sql = "SELECT * FROM vs_voters where voter_uniqueID = '$search'";
+            $sql = "SELECT u.id,u.voter_status,u.voter_uniqueID,c.county_name,d.district_name,p.precinct_name,po.polling_placeName,u.voter_name,u.voter_gender,u.voter_verifyStatus,u.voter_ballotNO,u.voter_age FROM vs_voters u
+                    INNER JOIN vs_county c on c.id = u.county_id
+                    INNER JOIN vs_district d on d.id = u.district_id
+                    INNER JOIN vs_precincts p on p.id = u.precinct_id
+                    INNER JOIN vs_polling po on po.id = u.polling_placeID
+                    where u.voter_uniqueID = '$search'";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 ?>
@@ -29,7 +35,10 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                 <tr>
                     <th>#</th>
                     <th>county</th>
-                    <th>Voter Name</th>
+                    <th>District</th>
+                    <th>Precinct</th>
+                    <th>Polling Place</th>
+                    <th>Name</th>
                     <th>Age</th>
                     <th>Gender</th>
                     <th>Verified ?</th>
@@ -43,6 +52,9 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                     <tr>
                         <td><?php echo $row['voter_uniqueID']; ?></td>
                         <td><?php echo $row['county_name']; ?></td>
+                        <td><?php echo $row['district_name']; ?></td>
+                        <td><?php echo $row['precinct_name']; ?></td>
+                        <td><?php echo $row['polling_placeName']; ?></td>
                         <td><?php echo $row['voter_name']; ?></td>
                         <td><?php echo $row['voter_age']; ?></td>
                         <td><?php echo $row['voter_gender']; ?></td>
@@ -82,7 +94,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                             ?></td>
                         <td class="text-center">
                             <a href="#" class="btn btn-danger btn-sm">Flag</a>
-                            <a href="#" onclick="show_voter(<?php echo $row['voter_uniqueID']; ?>)" class="btn btn-warning btn-sm">Update</a>
+                            <a href="updateVoter.php?id=<?php echo $row['voter_uniqueID']; ?>" class="btn btn-warning btn-sm">Update</a>
                             <a href="#" class="btn btn-info btn-sm">Verify</a>
                             <a href="#" class="btn btn-primary btn-sm">Issue Ballot</a>
                         </td>
@@ -116,7 +128,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                     <div class="modal-body">
                        <form>
                            <div class="form-group">
-                               <input type="text" name="county_name" id="county_name" class="form-control">
+                               <input type="text" name="county_name" id="voter_name" class="form-control">
                            </div>
                        </form>
                     </div>

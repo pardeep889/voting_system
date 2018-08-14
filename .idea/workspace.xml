@@ -6,6 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="cb6b814d-9001-4c4b-af1d-0a5398727cb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_vs1/addPolling.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_vs1/addPolling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_vs1/addPrecincts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_vs1/addPrecincts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_vs1/dist/css/ser.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin_vs1/dist/css/ser.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_vs1/dist/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin_vs1/dist/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_vs1/dist/js/pages/ser.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin_vs1/dist/js/pages/ser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_vs1/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_vs1/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_vs1/pages/includes/aside-section.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_vs1/pages/includes/aside-section.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_vs1/pages/includes/script-section.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_vs1/pages/includes/script-section.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_vs1/viewPolling.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_vs1/viewPolling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presiding/adddata.php" beforeDir="false" afterPath="$PROJECT_DIR$/presiding/adddata.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presiding/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/presiding/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presiding/js/pre.js" beforeDir="false" afterPath="$PROJECT_DIR$/presiding/js/pre.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presiding/pre_dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/presiding/pre_dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presiding/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/presiding/register.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,51 +27,55 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/admin_new/composer.json</pharConfigPath>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="631004552">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="5" />
-          <entry key="js" value="4" />
-          <entry key="php" value="86" />
+          <entry key="css" value="7" />
+          <entry key="html" value="1" />
+          <entry key="js" value="7" />
+          <entry key="php" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="5" />
-          <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="86" />
+          <entry key="CSS" value="7" />
+          <entry key="HTML" value="1" />
+          <entry key="JavaScript" value="7" />
+          <entry key="PHP" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="145" />
-          <entry key="js" value="4124" />
-          <entry key="php" value="16666" />
+          <entry key="css" value="147" />
+          <entry key="html" value="11" />
+          <entry key="js" value="4684" />
+          <entry key="php" value="19433" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="146" />
-          <entry key="HTML" value="71" />
-          <entry key="JavaScript" value="4123" />
-          <entry key="PHP" value="16542" />
-          <entry key="SQL" value="53" />
+          <entry key="CSS" value="148" />
+          <entry key="HTML" value="82" />
+          <entry key="JavaScript" value="4683" />
+          <entry key="PHP" value="19300" />
+          <entry key="SQL" value="62" />
         </counts>
       </usages-collector>
     </session>
@@ -68,199 +86,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_vs1/dist/js/admin.js">
+        <entry file="file://$PROJECT_DIR$/presiding/pre_dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="438" lean-forward="true" selection-start-line="438" selection-end-line="438" />
-              <folding>
-                <element signature="n#!!block;n#logout#0" />
-                <element signature="e#332#366#0" />
-                <element signature="n#!!block;n#upate_status#0" />
-                <element signature="n#!!block;n#upate_status#1" />
-                <element signature="n#!!block;n#f#0" />
-                <element signature="n#!!block;n#f#0" />
-                <element signature="n#!!block;n#county_update#0" />
-                <element signature="n#!!block;n#district_update#0" />
-                <element signature="n#!!block;n#f#0" />
-                <element signature="n#!!block;n#f#0" />
-                <element signature="n#!!block;n#countyUpdateName#0" />
-                <element signature="n#!!block;n#countyUpdateName#1" />
-                <element signature="n#!!block;n#f#0" />
-                <element signature="n#!!block;n#f#0" />
-                <element signature="n#!!block;n#addNewDistrict#0" />
-                <element signature="n#!!block;n#f#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_vs1/function.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="581" column="34" selection-start-line="581" selection-start-column="34" selection-end-line="581" selection-end-column="34" />
-              <folding>
-                <element signature="e#161#757#0#PHP" />
-                <element signature="e#532#751#0#PHP" />
-                <element signature="e#716#751#0#PHP" />
-                <element signature="e#776#891#0#PHP" />
-                <element signature="e#919#1549#0#PHP" />
-                <element signature="e#0#55#1" />
-                <element signature="e#1195#1543#0#PHP" />
-                <element signature="e#1502#1543#0#PHP" />
-                <element signature="e#1591#4539#0#PHP" />
-                <element signature="e#1992#4531#0#PHP" />
-                <element signature="e#2010#4278#0#PHP" />
-                <element signature="n#html#0;n#!!top" />
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#4108#4278#0#PHP" />
-                <element signature="e#4290#4531#0#PHP" />
-                <element signature="e#4563#5104#0#PHP" />
-                <element signature="e#4756#5016#0#PHP" />
-                <element signature="e#4961#5016#0#PHP" />
-                <element signature="e#5132#6335#0#PHP" />
-                <element signature="e#5246#6329#0#PHP" />
-                <element signature="e#5294#6165#0#PHP" />
-                <element signature="e#5535#6053#0#PHP" />
-                <element signature="e#0#66#1" />
-                <element signature="e#5728#5962#0#PHP" />
-                <element signature="e#5882#5962#0#PHP" />
-                <element signature="e#5981#6053#0#PHP" />
-                <element signature="e#6184#6329#0#PHP" />
-                <element signature="e#6382#7818#0#PHP" />
-                <element signature="e#6532#7730#0#PHP" />
-                <element signature="e#0#42#1" />
-                <element signature="e#6787#7665#0#PHP" />
-                <element signature="e#7044#7575#0#PHP" />
-                <element signature="e#0#68#1" />
-                <element signature="e#7253#7486#0#PHP" />
-                <element signature="e#7407#7486#0#PHP" />
-                <element signature="e#7504#7575#0#PHP" />
-                <element signature="e#7602#7665#0#PHP" />
-                <element signature="e#7675#7730#0#PHP" />
-                <element signature="e#7950#8401#0#PHP" />
-                <element signature="e#0#103#1" />
-                <element signature="e#8194#8324#0#PHP" />
-                <element signature="e#8277#8324#0#PHP" />
-                <element signature="e#8426#9334#0#PHP" />
-                <element signature="e#8536#9246#0#PHP" />
-                <element signature="e#0#228#0" />
-                <element signature="e#8999#9169#0#PHP" />
-                <element signature="e#9106#9169#0#PHP" />
-                <element signature="e#9190#9246#0#PHP" />
-                <element signature="e#9359#10035#0#PHP" />
-                <element signature="e#0#178#1" />
-                <element signature="e#9797#9946#0#PHP" />
-                <element signature="e#9891#9946#0#PHP" />
-                <element signature="e#10059#10813#0#PHP" />
-                <element signature="e#0#231#1" />
-                <element signature="e#10575#10724#0#PHP" />
-                <element signature="e#10669#10724#0#PHP" />
-                <element signature="e#10936#11519#0#PHP" />
-                <element signature="e#11075#11431#0#PHP" />
-                <element signature="e#0#68#1" />
-                <element signature="e#11208#11365#0#PHP" />
-                <element signature="e#11302#11365#0#PHP" />
-                <element signature="e#11375#11431#0#PHP" />
-                <element signature="e#11554#12141#0#PHP" />
-                <element signature="e#11695#12053#0#PHP" />
-                <element signature="e#0#70#1" />
-                <element signature="e#11830#11987#0#PHP" />
-                <element signature="e#11924#11987#0#PHP" />
-                <element signature="e#11997#12053#0#PHP" />
-                <element signature="e#12176#12764#0#PHP" />
-                <element signature="e#12317#12676#0#PHP" />
-                <element signature="e#0#71#1" />
-                <element signature="e#12453#12610#0#PHP" />
-                <element signature="e#12547#12610#0#PHP" />
-                <element signature="e#12620#12676#0#PHP" />
-                <element signature="e#12798#13385#0#PHP" />
-                <element signature="e#12940#13297#0#PHP" />
-                <element signature="e#0#69#1" />
-                <element signature="e#13074#13231#0#PHP" />
-                <element signature="e#13168#13231#0#PHP" />
-                <element signature="e#13241#13297#0#PHP" />
-                <element signature="e#13517#14129#0#PHP" />
-                <element signature="e#13691#14041#0#PHP" />
-                <element signature="e#0#65#1" />
-                <element signature="e#13818#13975#0#PHP" />
-                <element signature="e#13912#13975#0#PHP" />
-                <element signature="e#13985#14041#0#PHP" />
-                <element signature="e#14156#14964#0#PHP" />
-                <element signature="e#14427#14876#0#PHP" />
-                <element signature="e#0#172#1" />
-                <element signature="e#14653#14810#0#PHP" />
-                <element signature="e#14747#14810#0#PHP" />
-                <element signature="e#14820#14876#0#PHP" />
-                <element signature="e#14991#15742#0#PHP" />
-                <element signature="e#15248#15654#0#PHP" />
-                <element signature="e#0#124#1" />
-                <element signature="e#15431#15588#0#PHP" />
-                <element signature="e#15525#15588#0#PHP" />
-                <element signature="e#15598#15654#0#PHP" />
-                <element signature="e#15768#16445#0#PHP" />
-                <element signature="e#15996#16369#0#PHP" />
-                <element signature="e#0#127#1" />
-                <element signature="e#16174#16315#0#PHP" />
-                <element signature="e#16260#16315#0#PHP" />
-                <element signature="e#16321#16369#0#PHP" />
-                <element signature="e#16594#17281#0#PHP" />
-                <element signature="e#16733#17189#0#PHP" />
-                <element signature="e#0#43#1" />
-                <element signature="e#16916#17179#0#PHP" />
-                <element signature="e#17011#17103#0#PHP" />
-                <element signature="e#17130#17179#0#PHP" />
-                <element signature="e#17314#18006#0#PHP" />
-                <element signature="e#17456#17914#0#PHP" />
-                <element signature="e#0#45#1" />
-                <element signature="e#17641#17904#0#PHP" />
-                <element signature="e#17736#17828#0#PHP" />
-                <element signature="e#17855#17904#0#PHP" />
-                <element signature="e#18039#18732#0#PHP" />
-                <element signature="e#18181#18640#0#PHP" />
-                <element signature="e#0#46#1" />
-                <element signature="e#18367#18630#0#PHP" />
-                <element signature="e#18462#18554#0#PHP" />
-                <element signature="e#18581#18630#0#PHP" />
-                <element signature="e#18764#19414#0#PHP" />
-                <element signature="e#18889#19334#0#PHP" />
-                <element signature="e#0#84#1" />
-                <element signature="e#19097#19328#0#PHP" />
-                <element signature="e#19184#19268#0#PHP" />
-                <element signature="e#19287#19328#0#PHP" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin_vs1/addPrecincts.php">
+        <entry file="file://$PROJECT_DIR$/presiding/updateVoter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="88" column="63" lean-forward="true" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
-              <folding>
-                <element signature="e#3841#3883#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_vs1/pages/includes/head-section.php">
+        <entry file="file://$PROJECT_DIR$/admin_vs1/addPolling.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="275">
+              <caret line="58" column="147" lean-forward="true" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="147" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin_vs1/pages/includes/script-section.php">
+        <entry file="file://$PROJECT_DIR$/presiding/js/pre.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+              <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -272,6 +128,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -283,6 +140,7 @@
       <find>logout</find>
       <find>guage</find>
       <find>countyUpdateName</find>
+      <find>center</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -291,21 +149,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/presiding/register.php" />
-        <option value="$PROJECT_DIR$/css/login.css" />
         <option value="$PROJECT_DIR$/presiding/header.php" />
         <option value="$PROJECT_DIR$/presiding/login.php" />
-        <option value="$PROJECT_DIR$/presiding/js/pre.js" />
         <option value="$PROJECT_DIR$/presiding/css/master.css" />
         <option value="$PROJECT_DIR$/presiding/forgot.php" />
         <option value="$PROJECT_DIR$/presiding/request_forgot.php" />
         <option value="$PROJECT_DIR$/presiding/changepassword.php" />
-        <option value="$PROJECT_DIR$/presiding/pre_dashboard.php" />
         <option value="$PROJECT_DIR$/presiding/show_voter.php" />
-        <option value="$PROJECT_DIR$/presiding/function.php" />
         <option value="$PROJECT_DIR$/presiding/nav.php" />
         <option value="$PROJECT_DIR$/presiding/records.php" />
-        <option value="$PROJECT_DIR$/presiding/adddata.php" />
         <option value="$PROJECT_DIR$/admin_vs/session.php" />
         <option value="$PROJECT_DIR$/admin_vs/check_login.php" />
         <option value="$PROJECT_DIR$/admin_vs/login.php" />
@@ -329,16 +181,25 @@
         <option value="$PROJECT_DIR$/admin_vs1/viewCounty.php" />
         <option value="$PROJECT_DIR$/admin_vs1/viewPrecincts.php" />
         <option value="$PROJECT_DIR$/admin_vs1/addPolliong.php" />
-        <option value="$PROJECT_DIR$/admin_vs1/addPolling.php" />
-        <option value="$PROJECT_DIR$/admin_vs1/pages/includes/aside-section.php" />
-        <option value="$PROJECT_DIR$/admin_vs1/viewPolling.php" />
-        <option value="$PROJECT_DIR$/admin_vs1/function.php" />
-        <option value="$PROJECT_DIR$/admin_vs1/dist/js/admin.js" />
-        <option value="$PROJECT_DIR$/admin_vs1/dist/js/pages/ser.js" />
-        <option value="$PROJECT_DIR$/admin_vs1/dist/css/ser.css" />
         <option value="$PROJECT_DIR$/admin_vs1/pages/includes/head-section.php" />
         <option value="$PROJECT_DIR$/admin_vs1/pages/includes/script-section.php" />
+        <option value="$PROJECT_DIR$/admin_vs1/test.html" />
+        <option value="$PROJECT_DIR$/admin_vs1/dist/js/pages/ser.js" />
+        <option value="$PROJECT_DIR$/admin_vs1/dist/css/ser.css" />
+        <option value="$PROJECT_DIR$/admin_vs1/test.php" />
         <option value="$PROJECT_DIR$/admin_vs1/addPrecincts.php" />
+        <option value="$PROJECT_DIR$/admin_vs1/function.php" />
+        <option value="$PROJECT_DIR$/admin_vs1/dist/js/admin.js" />
+        <option value="$PROJECT_DIR$/admin_vs1/addPolling.php" />
+        <option value="$PROJECT_DIR$/admin_vs1/viewPolling.php" />
+        <option value="$PROJECT_DIR$/admin_vs1/pages/includes/aside-section.php" />
+        <option value="$PROJECT_DIR$/admin_vs1/addVoter.php" />
+        <option value="$PROJECT_DIR$/presiding/function.php" />
+        <option value="$PROJECT_DIR$/presiding/adddata.php" />
+        <option value="$PROJECT_DIR$/presiding/register.php" />
+        <option value="$PROJECT_DIR$/presiding/js/pre.js" />
+        <option value="$PROJECT_DIR$/presiding/pre_dashboard.php" />
+        <option value="$PROJECT_DIR$/presiding/updateVoter.php" />
       </list>
     </option>
   </component>
@@ -397,7 +258,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -413,43 +273,17 @@
             <path>
               <item name="vote" type="b2602c69:ProjectViewProjectNode" />
               <item name="vote" type="462c0819:PsiDirectoryNode" />
-              <item name="admin_vs1" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vote" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vote" type="462c0819:PsiDirectoryNode" />
-              <item name="admin_vs1" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vote" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vote" type="462c0819:PsiDirectoryNode" />
-              <item name="admin_vs1" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vote" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vote" type="462c0819:PsiDirectoryNode" />
-              <item name="admin_vs1" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vote" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vote" type="462c0819:PsiDirectoryNode" />
-              <item name="admin_vs1" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
+              <item name="presiding" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -490,22 +324,22 @@
       <workItem from="1533960613093" duration="3858000" />
       <workItem from="1533965054691" duration="25476000" />
       <workItem from="1534133821302" duration="24008000" />
+      <workItem from="1534218428977" duration="24580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99485000" />
+    <option name="totallyTimeSpent" value="124065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1323" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24667189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2505873" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32952693" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -540,41 +374,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/presiding/js/pre.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/presiding/css/master.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/presiding/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/presiding/request_forgot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/_types.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -606,24 +405,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/presiding/pre_dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/presiding/forgot.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1479">
           <caret line="87" column="37" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/presiding/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="133" column="2" lean-forward="true" selection-start-line="133" selection-start-column="2" selection-end-line="133" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -652,13 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/presiding/adddata.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="93" column="26" lean-forward="true" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -768,9 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#section#0;n#section#0;n#section#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -785,17 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="e#103#631#0#PHP" />
-            <element signature="e#642#741#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_vs1/addCounty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="81" column="13" lean-forward="true" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -806,31 +570,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_vs1/pages/includes/header-section.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_vs1/viewPrecincts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="111" column="87" selection-start-line="111" selection-start-column="80" selection-end-line="111" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_vs1/addPolling.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="150" column="135" selection-start-line="150" selection-start-column="135" selection-end-line="150" selection-end-column="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_vs1/addDistrict.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="115" column="5" lean-forward="true" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -841,40 +584,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_vs1/pages/includes/aside-section.php">
+    <entry file="file://$PROJECT_DIR$/admin_vs1/pages/includes/script-section.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="60" column="106" selection-start-line="60" selection-start-column="106" selection-end-line="60" selection-end-column="106" />
+        <state relative-caret-position="238">
+          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_vs1/viewPolling.php">
+    <entry file="file://$PROJECT_DIR$/admin_vs1/dist/js/pages/ser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="132" column="32" lean-forward="true" selection-start-line="132" selection-start-column="32" selection-end-line="132" selection-end-column="32" />
+        <state relative-caret-position="136">
+          <caret line="2673" column="52" lean-forward="true" selection-start-line="2673" selection-start-column="52" selection-end-line="2673" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_vs1/dist/css/ser.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_vs1/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="181" column="135" selection-start-line="181" selection-start-column="73" selection-end-line="181" selection-end-column="135" />
+          <folding>
+            <element signature="e#3630#3652#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_vs1/function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="581" column="34" selection-start-line="581" selection-start-column="34" selection-end-line="581" selection-end-column="34" />
+        <state relative-caret-position="275">
+          <caret line="609" column="33" lean-forward="true" selection-start-line="609" selection-start-column="33" selection-end-line="609" selection-end-column="33" />
           <folding>
             <element signature="e#161#757#0#PHP" />
             <element signature="e#532#751#0#PHP" />
             <element signature="e#716#751#0#PHP" />
             <element signature="e#776#891#0#PHP" />
             <element signature="e#919#1549#0#PHP" />
-            <element signature="e#0#55#1" />
             <element signature="e#1195#1543#0#PHP" />
             <element signature="e#1502#1543#0#PHP" />
             <element signature="e#1591#4539#0#PHP" />
             <element signature="e#1992#4531#0#PHP" />
             <element signature="e#2010#4278#0#PHP" />
-            <element signature="n#html#0;n#!!top" />
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="e#4108#4278#0#PHP" />
             <element signature="e#4290#4531#0#PHP" />
             <element signature="e#4563#5104#0#PHP" />
@@ -884,109 +642,89 @@
             <element signature="e#5246#6329#0#PHP" />
             <element signature="e#5294#6165#0#PHP" />
             <element signature="e#5535#6053#0#PHP" />
-            <element signature="e#0#66#1" />
             <element signature="e#5728#5962#0#PHP" />
             <element signature="e#5882#5962#0#PHP" />
             <element signature="e#5981#6053#0#PHP" />
             <element signature="e#6184#6329#0#PHP" />
             <element signature="e#6382#7818#0#PHP" />
             <element signature="e#6532#7730#0#PHP" />
-            <element signature="e#0#42#1" />
             <element signature="e#6787#7665#0#PHP" />
             <element signature="e#7044#7575#0#PHP" />
-            <element signature="e#0#68#1" />
             <element signature="e#7253#7486#0#PHP" />
             <element signature="e#7407#7486#0#PHP" />
             <element signature="e#7504#7575#0#PHP" />
             <element signature="e#7602#7665#0#PHP" />
             <element signature="e#7675#7730#0#PHP" />
             <element signature="e#7950#8401#0#PHP" />
-            <element signature="e#0#103#1" />
             <element signature="e#8194#8324#0#PHP" />
             <element signature="e#8277#8324#0#PHP" />
             <element signature="e#8426#9334#0#PHP" />
             <element signature="e#8536#9246#0#PHP" />
-            <element signature="e#0#228#0" />
             <element signature="e#8999#9169#0#PHP" />
             <element signature="e#9106#9169#0#PHP" />
             <element signature="e#9190#9246#0#PHP" />
-            <element signature="e#9359#10035#0#PHP" />
-            <element signature="e#0#178#1" />
             <element signature="e#9797#9946#0#PHP" />
             <element signature="e#9891#9946#0#PHP" />
             <element signature="e#10059#10813#0#PHP" />
-            <element signature="e#0#231#1" />
             <element signature="e#10575#10724#0#PHP" />
             <element signature="e#10669#10724#0#PHP" />
             <element signature="e#10936#11519#0#PHP" />
             <element signature="e#11075#11431#0#PHP" />
-            <element signature="e#0#68#1" />
             <element signature="e#11208#11365#0#PHP" />
             <element signature="e#11302#11365#0#PHP" />
             <element signature="e#11375#11431#0#PHP" />
             <element signature="e#11554#12141#0#PHP" />
             <element signature="e#11695#12053#0#PHP" />
-            <element signature="e#0#70#1" />
             <element signature="e#11830#11987#0#PHP" />
             <element signature="e#11924#11987#0#PHP" />
             <element signature="e#11997#12053#0#PHP" />
             <element signature="e#12176#12764#0#PHP" />
             <element signature="e#12317#12676#0#PHP" />
-            <element signature="e#0#71#1" />
             <element signature="e#12453#12610#0#PHP" />
             <element signature="e#12547#12610#0#PHP" />
             <element signature="e#12620#12676#0#PHP" />
             <element signature="e#12798#13385#0#PHP" />
             <element signature="e#12940#13297#0#PHP" />
-            <element signature="e#0#69#1" />
             <element signature="e#13074#13231#0#PHP" />
             <element signature="e#13168#13231#0#PHP" />
             <element signature="e#13241#13297#0#PHP" />
             <element signature="e#13517#14129#0#PHP" />
             <element signature="e#13691#14041#0#PHP" />
-            <element signature="e#0#65#1" />
             <element signature="e#13818#13975#0#PHP" />
             <element signature="e#13912#13975#0#PHP" />
             <element signature="e#13985#14041#0#PHP" />
             <element signature="e#14156#14964#0#PHP" />
             <element signature="e#14427#14876#0#PHP" />
-            <element signature="e#0#172#1" />
             <element signature="e#14653#14810#0#PHP" />
             <element signature="e#14747#14810#0#PHP" />
             <element signature="e#14820#14876#0#PHP" />
             <element signature="e#14991#15742#0#PHP" />
             <element signature="e#15248#15654#0#PHP" />
-            <element signature="e#0#124#1" />
             <element signature="e#15431#15588#0#PHP" />
             <element signature="e#15525#15588#0#PHP" />
             <element signature="e#15598#15654#0#PHP" />
             <element signature="e#15768#16445#0#PHP" />
             <element signature="e#15996#16369#0#PHP" />
-            <element signature="e#0#127#1" />
             <element signature="e#16174#16315#0#PHP" />
             <element signature="e#16260#16315#0#PHP" />
             <element signature="e#16321#16369#0#PHP" />
             <element signature="e#16594#17281#0#PHP" />
             <element signature="e#16733#17189#0#PHP" />
-            <element signature="e#0#43#1" />
             <element signature="e#16916#17179#0#PHP" />
             <element signature="e#17011#17103#0#PHP" />
             <element signature="e#17130#17179#0#PHP" />
             <element signature="e#17314#18006#0#PHP" />
             <element signature="e#17456#17914#0#PHP" />
-            <element signature="e#0#45#1" />
             <element signature="e#17641#17904#0#PHP" />
             <element signature="e#17736#17828#0#PHP" />
             <element signature="e#17855#17904#0#PHP" />
             <element signature="e#18039#18732#0#PHP" />
             <element signature="e#18181#18640#0#PHP" />
-            <element signature="e#0#46#1" />
             <element signature="e#18367#18630#0#PHP" />
             <element signature="e#18462#18554#0#PHP" />
             <element signature="e#18581#18630#0#PHP" />
             <element signature="e#18764#19414#0#PHP" />
             <element signature="e#18889#19334#0#PHP" />
-            <element signature="e#0#84#1" />
             <element signature="e#19097#19328#0#PHP" />
             <element signature="e#19184#19268#0#PHP" />
             <element signature="e#19287#19328#0#PHP" />
@@ -994,66 +732,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_vs1/dist/js/admin.js">
+    <entry file="file://$PROJECT_DIR$/admin_vs1/viewPolling.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="438" lean-forward="true" selection-start-line="438" selection-end-line="438" />
-          <folding>
-            <element signature="n#!!block;n#logout#0" />
-            <element signature="e#332#366#0" />
-            <element signature="n#!!block;n#upate_status#0" />
-            <element signature="n#!!block;n#upate_status#1" />
-            <element signature="n#!!block;n#f#0" />
-            <element signature="n#!!block;n#f#0" />
-            <element signature="n#!!block;n#county_update#0" />
-            <element signature="n#!!block;n#district_update#0" />
-            <element signature="n#!!block;n#f#0" />
-            <element signature="n#!!block;n#f#0" />
-            <element signature="n#!!block;n#countyUpdateName#0" />
-            <element signature="n#!!block;n#countyUpdateName#1" />
-            <element signature="n#!!block;n#f#0" />
-            <element signature="n#!!block;n#f#0" />
-            <element signature="n#!!block;n#addNewDistrict#0" />
-            <element signature="n#!!block;n#f#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_vs1/dist/js/pages/ser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="3890" column="4" selection-start-line="3890" selection-start-column="4" selection-end-line="3890" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_vs1/dist/css/ser.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="403" lean-forward="true" selection-start-line="403" selection-end-line="403" />
+        <state relative-caret-position="272">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_vs1/pages/includes/head-section.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="697">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_vs1/pages/includes/script-section.php">
+    <entry file="file://$PROJECT_DIR$/admin_vs1/pages/includes/header-section.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_vs1/pages/includes/aside-section.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="72" column="102" selection-start-line="72" selection-start-column="102" selection-end-line="72" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_vs1/dist/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="459" column="70" selection-start-line="459" selection-start-column="70" selection-end-line="459" selection-end-column="70" />
+          <folding>
+            <element signature="n#!!block;n#logout#0" />
+            <element signature="e#332#366#0" />
+            <element signature="n#!!block;n#upate_status#0" />
+            <element signature="n#!!block;n#county_update#0" />
+            <element signature="n#!!block;n#district_update#0" />
+            <element signature="n#!!block;n#countyUpdateName#0" />
+            <element signature="n#!!block;n#addNewDistrict#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_vs1/addPrecincts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="88" column="63" lean-forward="true" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
-          <folding>
-            <element signature="e#3841#3883#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="84" column="57" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_vs1/addDistrict.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="115" column="5" lean-forward="true" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_vs1/addCounty.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="66" column="33" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presiding/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presiding/adddata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presiding/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_vs1/addVoter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presiding/js/pre.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presiding/pre_dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_vs1/addPolling.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="58" column="147" lean-forward="true" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presiding/updateVoter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
         </state>
       </provider>
     </entry>

@@ -42,11 +42,6 @@
 </script>
 <script src="dist/js/admin.js"></script>
 
-<script src="dist/js/pages/ser.js"> </script>
-<script>
-    $('#select-gear').selectize({
-        create: true,
-        sortField: 'text'
-    });
-</script>
+<!--<script src="dist/js/pages/ser.js"> </script>-->
+
 </script>

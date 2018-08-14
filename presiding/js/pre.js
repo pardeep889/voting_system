@@ -22,7 +22,7 @@ function show_voter(unique_id) {
         success: function (data) {
             $('#myModal').modal('show');
             console.log(data);
-            $("#county_name").val(data.county_name);
+            $("#voter_name").val(data.voter_name);
         }
     });
 }

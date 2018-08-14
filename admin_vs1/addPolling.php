@@ -47,11 +47,12 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
                                 if ($result->num_rows > 0) {
                                     ?>
                                     <label class="mr-sm-2" for="inlineFormCustomSelect">Select County</label>
-                                    <select class="form-control mr-sm-2" id="inlineFormCustomSelect" style="color:#337ab7;  font-weight: bold;">
-
+                                    <select class="form-control mr-sm-2 county_select" id="inlineFormCustomSelect" style="color:#337ab7;  font-weight: bold;">
+    <option selected disabled>Select County</option>
 
                                         <?php
                                         // output data of each row
+
                                         while($row = $result->fetch_assoc()) {
 //                                echo json_encode($row);
                                             ?>
@@ -72,66 +73,23 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <?php
-                                $sql = "SELECT id,district_name from vs_district where status = 1";
 
-                                $result = $conn->query($sql);
-
-                                if ($result->num_rows > 0) {
-                                    ?>
                                     <label class="mr-sm-2" for="inlineFormCustomSelect">Select District</label>
-                                    <select class="form-control mr-sm-2" id="inlineFormCustomSelect" style="color:#337ab7;  font-weight: bold;">
-
-
-                                        <?php
-                                        // output data of each row
-                                        while($row = $result->fetch_assoc()) {
-//                                echo json_encode($row);
-                                            ?>
-                                            <option class="district_id" value="<?php echo $row['id']; ?>"><?php echo $row['district_name']; ?></option>
-
-                                            <?php
-                                        }
-                                        ?>
+                                    <select class="form-control mr-sm-2 district_select district_filter" id="inlineFormCustomSelect1" style="color:#337ab7;  font-weight: bold;">
+                                            <option>Select District</option>
                                     </select>
-
-                                    <?php
-                                } else {
-                                    echo "0 results";
-                                }
-                                ?>
 
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <?php
-                                $sql = "SELECT * from vs_precincts where status = 1";
 
-                                $result = $conn->query($sql);
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Select Precinct</label>
+                                    <select class="form-control mr-sm-2 precinct_select" id="inlineFormCustomSelect" style="color:#337ab7;  font-weight: bold;">
+                                        <option>Select Precinct</option>
 
-                                if ($result->num_rows > 0) {
-                                    ?>
-                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Select District</label>
-                                    <select class="form-control mr-sm-2" id="inlineFormCustomSelect" style="color:#337ab7;  font-weight: bold;">
-
-
-                                        <?php
-                                        // output data of each row
-                                        while($row = $result->fetch_assoc()) {
-                                            ?>
-                                            <option class="precinct_id" value="<?php echo $row['id']; ?>"><?php echo $row['precinct_name']; ?></option>
-
-                                            <?php
-                                        }
-                                        ?>
                                     </select>
 
-                                    <?php
-                                } else {
-                                    echo "0 results";
-                                }
-                                ?>
 
                             </div>
                         </div>
