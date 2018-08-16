@@ -464,6 +464,30 @@ use PHPMailer\PHPMailer\Exception;
     echo json_encode($data);
 }
 
+if($_GET['select'] == "updateCandidate") {
+    require "../db/conn.php";
+    require "session.php";
+    $id = $_GET['id'];
+    $fname = $_GET['fname'];
+    $lname = $_GET['lname'];
+    $party = $_GET['party'];
+    $pos = $_GET['pos'];
+    $gender = $_GET['gender'];
+    if ($_SESSION['user_role'] == 1) {
+        $sql = "UPDATE vs_candidates SET first_name = '$fname',	last_name = '$lname', gender = '$gender'
+              ,candidate_position = '$pos', party = '$party' where id = '$id'";
+
+        if ($conn->query($sql) === TRUE) {
+            $response['message'] = "success";
+        } else {
+            $response['message'] = "fails";
+        }
+    }else{
+        $response['message'] = "unAuth";
+    }
+    header("content-type:application/json");
+    echo json_encode($response);
+}
 // ------------ End Update Section -----------------------
 
 
@@ -560,6 +584,49 @@ use PHPMailer\PHPMailer\Exception;
     header("content-type:application/json");
     echo json_encode($response);
 }
+    //candidate
+    if($_GET['select'] == "candidateUpdate"){
+    require "../db/conn.php";
+    require "session.php";
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM vs_candidates where id = '$id'";
+    $result = mysqli_query($conn,$sql);
+    $response=[];
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $response=$row;
+        }
+    }else{
+        $response['message'] = "success";
+    }
+
+
+    header("content-type:application/json");
+    echo json_encode($response);
+
+}
+    // logo
+    if($_GET['select'] == "imageUpdate"){
+        require "../db/conn.php";
+        require "session.php";
+        $id = $_GET['id'];
+        $sql = "SELECT logo FROM vs_candidates where id = '$id'";
+        $result = mysqli_query($conn,$sql);
+        $response=[];
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $response=$row;
+            }
+        }else{
+            $response['message'] = "fails";
+        }
+
+
+        header("content-type:application/json");
+        echo json_encode($response);
+    }
 
 //-----------update call end-------------
 

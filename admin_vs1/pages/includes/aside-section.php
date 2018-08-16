@@ -51,7 +51,7 @@
         </li>
           <li class="active treeview">
               <a href="#">
-                  <i class="fa fa-dashboard"></i> <span>Manage Polling</span>
+                  <i class="fa fa-dashboard"></i> <span>Manage Polling Center</span>
                   <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -59,6 +59,18 @@
               <ul class="treeview-menu">
                   <li class="active"><a href="addPolling.php"><i class="fa fa-circle-o"></i> Add Polling</a></li>
                   <li class="active"><a href="viewPolling.php"><i class="fa fa-circle-o"></i> View Polling</a></li>
+              </ul>
+          </li>
+          <li class="active treeview">
+              <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>Manage Candidate</span>
+                  <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li class="active"><a href="addCandidate.php"><i class="fa fa-circle-o"></i> Add Candidate</a></li>
+                  <li class="active"><a href="viewCandidate.php"><i class="fa fa-circle-o"></i> View Candidate</a></li>
               </ul>
           </li>
           <li class="active treeview">

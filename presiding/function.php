@@ -221,3 +221,177 @@ if($_GET['select'] == 'change_password'){
     header("content-type:application/json");
     echo json_encode($data);
 }
+
+if($_GET['select'] == 'filterDistrict'){
+       require "../db/conn.php";
+       require "session.php";
+       $id = $_GET['id'];
+       if($_SESSION['user_role'] == 3) {
+           $sql = "SELECT * FROM `vs_district` WHERE county_id = '$id'";
+           $result = mysqli_query($conn,$sql);
+           $response=[];
+           if (mysqli_num_rows($result) > 0) {
+               // output data of each row
+               while($row = $result->fetch_assoc()) {
+                   $response[]=$row;
+               }
+           }
+           else{
+               $response['no'] =  'fails';
+           }
+           header("content-type:application/json");
+           echo json_encode($response);
+       }
+   }
+
+if($_GET['select'] == 'filterPrecinct'){
+    require "../db/conn.php";
+    require "session.php";
+    $id = $_GET['id'];
+    if($_SESSION['user_role'] == 3) {
+        $sql = "SELECT * FROM `vs_precincts` WHERE district_id = '$id'";
+        $result = mysqli_query($conn,$sql);
+        $response=[];
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $response[]=$row;
+            }
+        }
+        else{
+            $response['no'] =  'fails';
+
+        }
+    }
+    else{
+        $response['no'] =  'unauth';
+    }
+    header("content-type:application/json");
+    echo json_encode($response);
+}
+if($_GET['select'] == 'filterPolling'){
+    require "../db/conn.php";
+    require "session.php";
+    $id = $_GET['id'];
+    if($_SESSION['user_role'] == 3) {
+        $sql = "SELECT * FROM `vs_polling` WHERE precinct_id = '$id'";
+//            $sql = "SELECT id,district_name FROM vs_district where county_id = '$id'";
+        $result = mysqli_query($conn,$sql);
+        $response=[];
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+//                    echo json_encode($row);
+                $response[]=$row;
+//                    echo '<option  data-subtext="'.$row['id'].'" class="district_id" value="'.$row['id'].'">'.$row['district_name'].'</option>';
+            }
+        }
+        else{
+            $response['no'] =  'fails';
+        }
+    }
+    else{
+        $response['no'] =  'unauth';
+    }
+    header("content-type:application/json");
+    echo json_encode($response);
+}
+
+if($_GET['select'] == 'update_voter'){
+  require "../db/conn.php";
+  require "session.php";
+  $unique = $_GET['unique'];
+$c_id = $_GET['c_id'];
+$d_id = $_GET['d_id'];
+$p_id = $_GET['p_id'];
+$pol_id = $_GET['pol_id'];
+$center = $_GET['center'];
+$center_address = $_GET['center_address'];
+$name = $_GET['name'];
+$gender = $_GET['gender'];
+$voter_age = $_GET['voter_age'];
+$email = $_GET['email'];
+$number = $_GET['number'];
+$voter_address = $_GET['voter_address'];
+     if($_SESSION['user_role'] == 3){
+       $sql = "UPDATE vs_voters SET county_id = '$c_id',district_id = '$d_id', precinct_id='$p_id',polling_placeID = '$pol_id', center_code = '$center',
+                center_address = '$center_address', voter_name ='$name', voter_gender = '$gender', 	voter_age = '$voter_age', voter_email = '$email', voter_contactNO = '$number',
+                voter_address = '$voter_address', voter_verifyStatus	= 2
+             where voter_uniqueID = '$unique'";
+     if ($conn->query($sql) === TRUE) {
+          $response['message'] = "success";
+      }
+      else {
+        $response['message'] = "fails";
+      }
+     }
+     else{
+        $response['message'] = "unAuth";
+     }
+
+  header("content-type:application/json");
+  echo json_encode($response);
+}
+if($_GET['select'] == "flag"){
+  require "../db/conn.php";
+  require "session.php";
+  $unique = $_GET['unique'];
+     if($_SESSION['user_role'] == 3){
+          $sql = "UPDATE vs_voters SET voter_status = 0 WHERE voter_uniqueID = '$unique' ";
+          if($conn->query($sql) === TRUE){
+            $response['message'] = "success";
+          }
+          else{
+              $response['message'] = "fails";
+          }
+
+     }else{
+         $response['message'] = "unAuth";
+     }
+
+
+  header("content-type:application/json");
+  echo json_encode($response);
+}
+if($_GET['select'] == "verify"){
+  require "../db/conn.php";
+  require "session.php";
+  $unique = $_GET['unique'];
+  if($_SESSION['user_role'] == 3){
+       $sql = "UPDATE vs_voters SET voter_verifyStatus = 1 WHERE voter_uniqueID = '$unique' ";
+       if($conn->query($sql) === TRUE){
+         $response['message'] = "success";
+       }
+       else{
+           $response['message'] = "fails";
+       }
+
+  }else{
+      $response['message'] = "unAuth";
+  }
+
+
+header("content-type:application/json");
+echo json_encode($response);
+}
+
+if($_GET['select'] == "ballot"){
+  require "../db/conn.php";
+  require "session.php";
+  $unique = $_GET['unique'];
+  $ballot = $_GET['ballot'];
+  if($_SESSION['user_role'] == 3){
+       $sql = "UPDATE vs_voters SET voter_ballotNO = '$ballot' WHERE voter_uniqueID = '$unique' ";
+       if($conn->query($sql) === TRUE){
+         $response['message'] = "success";
+       }
+       else{
+           $response['message'] = "fails";
+       }
+
+  }else{
+      $response['message'] = "unAuth";
+  }
+header("content-type:application/json");
+echo json_encode($response);
+}

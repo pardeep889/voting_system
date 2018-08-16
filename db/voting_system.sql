@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 14, 2018 at 02:04 PM
+-- Generation Time: Aug 16, 2018 at 02:31 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -54,6 +54,37 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `vs_candidates`
+--
+
+CREATE TABLE `vs_candidates` (
+  `id` int(10) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `county_id` int(10) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `candidate_position` varchar(255) NOT NULL,
+  `party` varchar(100) NOT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vs_candidates`
+--
+
+INSERT INTO `vs_candidates` (`id`, `first_name`, `last_name`, `county_id`, `gender`, `candidate_position`, `party`, `logo`, `created_at`, `updated_at`) VALUES
+(1, 'stylish 1', 'def', 16, 'female', 'position', 'party', 'Screenshot from 2018-07-04 10-08-43.png', '2018-08-16 09:15:29', '2018-08-16 12:12:06'),
+(2, 'stylish', 'zzz1', 16, 'female', 'position1', 'party1', 'Screenshot from 2018-07-03 11-43-51.png', '2018-08-16 09:16:55', '2018-08-16 11:07:55'),
+(3, 'stylish 1', 'User', 1, 'male', 'asdasd', 'party', NULL, '2018-08-16 09:17:03', '2018-08-16 09:17:03'),
+(4, '', '', 1, 'male', '', '', NULL, '2018-08-16 09:17:03', '2018-08-16 09:17:03'),
+(5, '', '', 1, 'male', '', '', NULL, '2018-08-16 09:17:24', '2018-08-16 09:17:24'),
+(6, 'asdasd', 'asdsad', 1, 'female', 'position', 'asdsd', NULL, '2018-08-16 09:22:07', '2018-08-16 09:22:07');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vs_county`
 --
 
@@ -70,7 +101,7 @@ CREATE TABLE `vs_county` (
 --
 
 INSERT INTO `vs_county` (`id`, `county_name`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Bomi', 1, '2018-08-11 11:06:51', '2018-08-13 04:43:48'),
+(1, 'Bomi', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
 (2, 'Bong', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
 (3, 'Grand Bassa', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
 (4, 'Grand Cape Mount', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
@@ -85,7 +116,7 @@ INSERT INTO `vs_county` (`id`, `county_name`, `status`, `created_at`, `updated_a
 (13, 'Sinoe', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
 (14, 'River Gee', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
 (15, 'Gbarpolu', 1, '2018-08-11 11:06:51', '0000-00-00 00:00:00'),
-(16, 'test_county', 1, '2018-08-11 11:55:41', '2018-08-11 11:55:41');
+(16, 'test_county', 1, '2018-08-11 11:55:41', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -110,9 +141,10 @@ CREATE TABLE `vs_district` (
 --
 
 INSERT INTO `vs_district` (`id`, `district_name`, `precincts`, `polling_places`, `county_id`, `status`, `magisterial_area`, `created_at`, `updated_at`) VALUES
-(1, 'demo1', 1, 2, 2, 1, 'Bong (Lower)', '2018-08-11 10:20:34', '2018-08-14 07:59:28'),
+(1, 'demo1', 1, 2, 2, 1, 'Bong (Lower) ', '2018-08-11 10:20:34', '2018-08-16 04:26:33'),
 (2, 'demo3', 12, 23, 7, 1, 'aaasa', '2018-08-13 06:46:54', '2018-08-14 07:59:39'),
-(3, 'demo four', 12, 10, 2, 1, 'asdfghj', '2018-08-13 08:11:58', '2018-08-14 08:01:13');
+(3, 'demo four', 12, 10, 2, 1, 'asdfghj', '2018-08-13 08:11:58', '2018-08-14 08:01:13'),
+(4, '', 0, 0, 1, 1, '', '2018-08-16 08:09:13', '2018-08-16 08:09:13');
 
 -- --------------------------------------------------------
 
@@ -158,9 +190,9 @@ CREATE TABLE `vs_polling` (
 --
 
 INSERT INTO `vs_polling` (`id`, `county_id`, `district_id`, `precinct_id`, `polling_placeName`, `polling_placeAddress`, `status`, `created_at`, `updated_at`) VALUES
-(1, 16, 1, 1, 'naanana', 'ad', 1, '2018-08-13 06:37:32', '2018-08-13 07:21:49'),
-(2, 1, 2, 1, 'adb', 'zzz', 0, '2018-08-13 06:56:30', '2018-08-13 07:05:33'),
-(3, 7, 2, 15, 'my_polling_plcae', 'address', 1, '2018-08-14 08:08:35', '2018-08-14 08:08:35');
+(1, 16, 1, 1, 'naananaa', 'ad', 1, '2018-08-13 06:37:32', '2018-08-16 04:29:13'),
+(2, 1, 2, 1, 'aaa', 'zzz', 1, '2018-08-13 06:56:30', '2018-08-16 04:29:14'),
+(3, 7, 2, 15, 'my_polling_plcae', 'address', 1, '2018-08-14 08:08:35', '2018-08-16 04:29:16');
 
 -- --------------------------------------------------------
 
@@ -184,7 +216,7 @@ CREATE TABLE `vs_precincts` (
 --
 
 INSERT INTO `vs_precincts` (`id`, `precinct_name`, `precinct_address`, `status`, `county_id`, `district_id`, `created_at`, `updated_at`) VALUES
-(1, 'abc', 'address', 1, 1, 0, '2018-08-11 11:51:54', '2018-08-13 05:50:44'),
+(1, 'abc', 'address ads', 1, 1, 0, '2018-08-11 11:51:54', '2018-08-16 04:27:38'),
 (2, 'new', 'qweryy', 1, 7, 0, '2018-08-13 07:47:12', '2018-08-13 07:47:12'),
 (3, 'new', 'qweryy', 1, 7, 0, '2018-08-13 07:47:15', '2018-08-13 07:47:15'),
 (4, 'you', 'addres you', 1, 7, 0, '2018-08-13 07:48:44', '2018-08-13 07:48:44'),
@@ -249,7 +281,7 @@ CREATE TABLE `vs_voters` (
   `voter_barcode` varchar(255) DEFAULT NULL,
   `voter_verifyStatus` int(5) DEFAULT NULL COMMENT '0 = inserted once,1 = verified, 2 = updated',
   `voter_ballotNO` varchar(25) DEFAULT NULL,
-  `voter_status` int(2) NOT NULL COMMENT 'active = 1 and Inactive = 0, Deleted = 2	',
+  `voter_status` int(2) NOT NULL COMMENT 'active = 1 and flagged = 0, Deleted = 2	',
   `voter_role` int(5) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
@@ -264,7 +296,8 @@ INSERT INTO `vs_voters` (`id`, `county_id`, `district_id`, `precinct_id`, `polli
 (3, 0, 0, 0, 0, '1034', '', 'john kerrylon', 'male', '25', 'johnkerrylon@gmail.com', '987654322', 'sdqwwerwrt wesdfs', 'photo', '780971107', 'barcode', 0, NULL, 1, 0, '2018-08-08 05:51:13', '2018-08-08 11:23:41'),
 (4, 0, 0, 0, 0, '111', '', 'Jasi aloved', 'female', '23', 'jessy@yahoo.com', '987654323', 'qwerty addresss', 'photo', '744569287', 'barcode', 0, NULL, 0, 0, '2018-08-08 06:02:42', '2018-08-09 12:02:55'),
 (5, 0, 0, 0, 0, '34', '', 'sssss', 'female', '45', 'sss@gmail.com', '987654324', 'asd', 'photo1', '711562107', 'barcode1', 0, NULL, 2, 0, '2018-08-08 06:04:34', '2018-08-09 12:02:52'),
-(6, 7, 2, 15, 3, NULL, NULL, 'robert alderson', 'male', '25', 'robert.alderson@gmail.com', '987654321', 'winterhell', 'haini', '797727957', 'qwertyui', 0, NULL, 1, 0, '2018-08-14 06:36:29', '2018-08-14 06:36:29');
+(6, 7, 2, 15, 3, '20018', 'abccc', 'robert alderson', 'male', '25', 'robert.alderson@gmail.com', '987654321', 'winterhell', 'haini', '797727957', 'qwertyui', 2, NULL, 1, 0, '2018-08-14 06:36:29', '2018-08-16 06:12:58'),
+(8, 7, 2, 15, 3, '20194', 'aaazaaxc', 'Jenny ', 'female', '23', 'jenny@gmail.com', '987654322', 'asdadsad', 'photo reb', '778307347', 'barcode1', 2, '', 1, 0, '2018-08-16 02:38:37', '2018-08-16 07:50:00');
 
 -- --------------------------------------------------------
 
@@ -286,6 +319,12 @@ CREATE TABLE `vs_votes` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `vs_candidates`
+--
+ALTER TABLE `vs_candidates`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `vs_county`
@@ -342,6 +381,12 @@ ALTER TABLE `vs_votes`
 --
 
 --
+-- AUTO_INCREMENT for table `vs_candidates`
+--
+ALTER TABLE `vs_candidates`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `vs_county`
 --
 ALTER TABLE `vs_county`
@@ -351,7 +396,7 @@ ALTER TABLE `vs_county`
 -- AUTO_INCREMENT for table `vs_district`
 --
 ALTER TABLE `vs_district`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `vs_fingerprints`
@@ -381,7 +426,7 @@ ALTER TABLE `vs_users`
 -- AUTO_INCREMENT for table `vs_voters`
 --
 ALTER TABLE `vs_voters`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `vs_votes`

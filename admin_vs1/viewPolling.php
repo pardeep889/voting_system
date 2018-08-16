@@ -101,7 +101,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
                     <div class="modal-content">
                         <div class="modal-header">
                             <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                            <h4 class="modal-title">Update County</h4>
+                            <h4 class="modal-title">Update Polling Place</h4>
                         </div>
                         <div class="modal-body">
 

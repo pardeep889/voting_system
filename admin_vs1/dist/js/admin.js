@@ -175,7 +175,7 @@ $(document).ready(function() {
             }
         });
     }
-
+    //polling place
     function polling_update(e) {
         var data = { "id": e };
         $.ajax({
@@ -191,6 +191,53 @@ $(document).ready(function() {
             }
         });
     }
+    //
+    function updateCandidate(e) {
+        var data = { "id": e };
+        $.ajax({
+            type: "GET",
+            url: 'function.php?select=candidateUpdate',
+            data: data,
+            success: function (data) {
+                $('#myModal').modal('show');
+                $("#idcan").val(data.id);
+                $("#first_name").val(data.first_name);
+                $("#last_name").val(data.last_name);
+                $("#party").val(data.party);
+                $("#pos").val(data.candidate_position);
+                var html = '';
+                if(data.gender == 'male'){
+                     html = '<option class="can_gen" value="'+data.gender+'">'+data.gender+'' +
+                        '</option><option class="can_gen" value="female">Female</option>';
+                }
+                else
+                {
+                    html = '<option class="can_gen" value="'+data.gender+'">'+data.gender+'' +
+                        '</option><option class="can_gen" value="male">Male</option>';
+                }
+                $("#can_gender").html(html);
+
+            }
+        });
+    }
+    
+    function update_image(e) {
+        $('#myModal1').modal('show');
+        $("#idcn").val(e);
+        var data  = {"id": e};
+        $.ajax({
+           type: "GET",
+           url: "function.php?select=imageUpdate",
+           data: data,
+           success: function (data) {
+                var html = '';
+                        html = '<img class="img img-responsive" src="uploads/'+data.logo+'">';
+                            $("#imagelocation").html(html);
+           }
+        });
+
+    }
+
 
 // ------------------End update call--------------
 
@@ -286,7 +333,7 @@ $(document).ready(function() {
             }
         });
     }
-
+    // polling
     function update_polling() {
         var id =  $("#idpoll").val();
         var p_name =  $("#inputName").val();
@@ -314,6 +361,41 @@ $(document).ready(function() {
 
             }
         });
+    }
+    // candidate
+    function candidateUpdate() {
+       var id =  $("#idcan").val();
+       var fname=  $("#first_name").val();
+       var lname =  $("#last_name").val();
+       var party =  $("#party").val();
+       var pos =  $("#pos").val();
+       var gender = $(".can_gen:selected").val();
+       // alert(id+fname+lname+party+pos+gender);
+        var data = {"id": id, "fname": fname, "lname": lname, "party": party, "pos": pos, "gender": gender};
+        $.ajax({
+            type: "GET",
+            url: "function.php?select=updateCandidate",
+            data: data,
+            success: function (data) {
+               if(data.message == "success"){
+                   location.reload();
+               }
+               else{
+                   swal("Something went wrong", "Please Try Again later", "error");
+               }
+            }
+        });
+    }
+    //logo
+    function update_logo() {
+        var id = $("#idcn").val();
+        var logo = $("#fileToUpload");
+
+        // console.log(logo);
+        var data = {
+            "id": id , "logo": logo
+        };
+        console.log(data);
     }
 
 // ------------End Update Section--------------------

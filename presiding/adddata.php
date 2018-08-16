@@ -14,7 +14,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
         <h2 class="text-center large-heading-margin-top">Add New Voter</h2>
         <?php $id = $_SESSION['polling_place'];
 
-    $sql = "SELECT pol.county_id,pol.district_id,pol.precinct_id,u.polling_placeID 
+    $sql = "SELECT pol.county_id,pol.district_id,pol.precinct_id,u.polling_placeID
       from vs_users u inner join vs_polling pol on u.polling_placeID = pol.id where u.polling_placeID = '$id'";
 
         $result = mysqli_query($conn,$sql);
@@ -22,7 +22,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
         if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo json_encode($row);
+                // echo json_encode($row);
      ?>
 
 
