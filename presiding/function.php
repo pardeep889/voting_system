@@ -55,7 +55,7 @@ if($_GET['select'] == 'forgot'){
     require "../db/conn.php";
     require "session.php";
     $email = $_GET['email'];
-    $sql = "SELECT id,email FROM vs_users WHERE email = '$email'";
+    $sql = "SELECT id,email FROM vs_users WHERE email = '$email' AND role = 3";
     $result = mysqli_query($conn,$sql);
     $response=[];
     if(mysqli_num_rows($result) > 0){

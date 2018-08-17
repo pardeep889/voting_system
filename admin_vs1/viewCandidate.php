@@ -77,7 +77,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
                                                 </span>
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <a href="#" onclick="update_image(<?php echo $row['id'] ?>)" class="btn btn-primary btn-sm">Update</a>
+                                                    <a href="logoUpdate.php?id=<?php echo $row['id'] ?>" onclick="" class="btn btn-primary btn-sm">Update</a>
                                                 </div>
                                             </div>
 
@@ -181,7 +181,6 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
                                         <div class="form-group">
                                             <label> Select image to upload:</label>
                                             <input type="hidden" name="idcn" id="idcn" required>
-                                            <input style="float: left;" type="file" size="500" name="fileToUpload" id="fileToUpload" required>
                                             <br>
                                             <input type="button" onclick="update_logo()" value="Update Image" class="btn btn-outline-success" name="submit">
                                         </div>

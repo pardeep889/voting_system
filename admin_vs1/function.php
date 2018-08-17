@@ -35,7 +35,7 @@ use PHPMailer\PHPMailer\Exception;
         require "../db/conn.php";
         require "session.php";
         $email = $_GET['email'];
-        $sql = "SELECT id,email FROM vs_users WHERE email = '$email'";
+        $sql = "SELECT id,email FROM vs_users WHERE email = '$email' AND role = 1";
         $result = mysqli_query($conn,$sql);
         $response=[];
         if(mysqli_num_rows($result) > 0){
@@ -74,7 +74,7 @@ use PHPMailer\PHPMailer\Exception;
                 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
                 $mail->SMTPAuth = true;                               // Enable SMTP authentication
                 $mail->Username = 'pardeepprotolabz@gmail.com';                 // SMTP username
-                $mail->Password = '********';                           // SMTP password
+                $mail->Password = '*******';                           // SMTP password
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 587;
                 $mail->setFrom("pardeep889@hotmail.com", 'pardeep test');
@@ -694,3 +694,29 @@ if($_GET['select'] == 'filterPrecinct'){
 
 
 // ----------Filters End--------
+
+// --- Chart Section Starts------
+
+if($_GET['select'] == "byCountyChart"){
+    require "../db/conn.php";
+    require "session.php";
+    if($_SESSION['user_role'] == 1){
+        $sql = "SELECT county_name from vs_county";
+        $result = mysqli_query($conn,$sql);
+        $response=[];
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = $result->fetch_assoc()) {
+//                    echo json_encode($row);
+                $response[] = $row;
+            }
+        }else{
+            $response['data'] = "fails";
+        }
+    }else{
+        $response['data'] = "unAuth";
+    }
+    header("content-type:application/json");
+    echo json_encode($response);
+}
+
+//----chat section ends-----

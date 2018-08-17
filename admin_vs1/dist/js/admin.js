@@ -389,13 +389,15 @@ $(document).ready(function() {
     //logo
     function update_logo() {
         var id = $("#idcn").val();
-        var logo = $("#fileToUpload");
+        var e  = $("#fileToUpload");
 
-        // console.log(logo);
-        var data = {
-            "id": id , "logo": logo
-        };
-        console.log(data);
+        var logo =  e.target.files[0].name;
+
+        console.log(logo);
+        // var data = {
+        //     "id": id , "logo": logo
+        // };
+        // console.log(data);
     }
 
 // ------------End Update Section--------------------

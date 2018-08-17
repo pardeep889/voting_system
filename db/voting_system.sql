@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 16, 2018 at 02:31 PM
+-- Generation Time: Aug 17, 2018 at 02:37 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -75,12 +75,12 @@ CREATE TABLE `vs_candidates` (
 --
 
 INSERT INTO `vs_candidates` (`id`, `first_name`, `last_name`, `county_id`, `gender`, `candidate_position`, `party`, `logo`, `created_at`, `updated_at`) VALUES
-(1, 'stylish 1', 'def', 16, 'female', 'position', 'party', 'Screenshot from 2018-07-04 10-08-43.png', '2018-08-16 09:15:29', '2018-08-16 12:12:06'),
-(2, 'stylish', 'zzz1', 16, 'female', 'position1', 'party1', 'Screenshot from 2018-07-03 11-43-51.png', '2018-08-16 09:16:55', '2018-08-16 11:07:55'),
+(1, 'stylish 1', 'def', 16, 'male', 'position', 'party', 'viewDis.png', '2018-08-16 09:15:29', '2018-08-17 04:36:55'),
+(2, 'stylish', 'zzz1', 16, 'female', 'position1', 'party1', 'sp1.png', '2018-08-16 09:16:55', '2018-08-17 04:24:00'),
 (3, 'stylish 1', 'User', 1, 'male', 'asdasd', 'party', NULL, '2018-08-16 09:17:03', '2018-08-16 09:17:03'),
 (4, '', '', 1, 'male', '', '', NULL, '2018-08-16 09:17:03', '2018-08-16 09:17:03'),
 (5, '', '', 1, 'male', '', '', NULL, '2018-08-16 09:17:24', '2018-08-16 09:17:24'),
-(6, 'asdasd', 'asdsad', 1, 'female', 'position', 'asdsd', NULL, '2018-08-16 09:22:07', '2018-08-16 09:22:07');
+(6, 'asdasd', 'asdsad', 1, 'female', 'position1', 'asdsd', NULL, '2018-08-16 09:22:07', '2018-08-17 04:28:56');
 
 -- --------------------------------------------------------
 
@@ -141,10 +141,10 @@ CREATE TABLE `vs_district` (
 --
 
 INSERT INTO `vs_district` (`id`, `district_name`, `precincts`, `polling_places`, `county_id`, `status`, `magisterial_area`, `created_at`, `updated_at`) VALUES
-(1, 'demo1', 1, 2, 2, 1, 'Bong (Lower) ', '2018-08-11 10:20:34', '2018-08-16 04:26:33'),
+(1, 'demo1', 1, 2, 2, 1, 'Bong (Lower)  1', '2018-08-11 10:20:34', '2018-08-17 05:56:10'),
 (2, 'demo3', 12, 23, 7, 1, 'aaasa', '2018-08-13 06:46:54', '2018-08-14 07:59:39'),
 (3, 'demo four', 12, 10, 2, 1, 'asdfghj', '2018-08-13 08:11:58', '2018-08-14 08:01:13'),
-(4, '', 0, 0, 1, 1, '', '2018-08-16 08:09:13', '2018-08-16 08:09:13');
+(4, 'dassdsad', 13, 11, 1, 1, 'sadas', '2018-08-16 08:09:13', '2018-08-17 05:58:32');
 
 -- --------------------------------------------------------
 
@@ -190,8 +190,8 @@ CREATE TABLE `vs_polling` (
 --
 
 INSERT INTO `vs_polling` (`id`, `county_id`, `district_id`, `precinct_id`, `polling_placeName`, `polling_placeAddress`, `status`, `created_at`, `updated_at`) VALUES
-(1, 16, 1, 1, 'naananaa', 'ad', 1, '2018-08-13 06:37:32', '2018-08-16 04:29:13'),
-(2, 1, 2, 1, 'aaa', 'zzz', 1, '2018-08-13 06:56:30', '2018-08-16 04:29:14'),
+(1, 16, 1, 1, 'poollll', 'ad', 1, '2018-08-13 06:37:32', '2018-08-16 12:55:34'),
+(2, 1, 2, 1, 'aaa', 'zzz', 1, '2018-08-13 06:56:30', '2018-08-16 12:56:49'),
 (3, 7, 2, 15, 'my_polling_plcae', 'address', 1, '2018-08-14 08:08:35', '2018-08-16 04:29:16');
 
 -- --------------------------------------------------------

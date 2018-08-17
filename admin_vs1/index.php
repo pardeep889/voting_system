@@ -1,5 +1,22 @@
 <?php require "session.php";
+        require "../db/conn.php";
 if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
+    $sql = "SELECT COUNT(*) as total_voters FROM vs_voters";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+
+    $sql1 = "SELECT COUNT(*) as total_district FROM vs_district;";
+    $result1 = $conn->query($sql1);
+    $row1 = $result1->fetch_assoc();
+
+
+    $sql2 = "SELECT COUNT(*) as total_precinct FROM vs_precincts;";
+    $result2 = $conn->query($sql2);
+    $row2 = $result2->fetch_assoc();
+
+    $sql3 = "SELECT COUNT(*) as total_polling FROM vs_polling;";
+    $result3 = $conn->query($sql3);
+    $row3 = $result3->fetch_assoc();
 
 ?>
 
@@ -11,6 +28,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Voting System | Dashboard</title>
 	<?php include("pages/includes/head-section.php");?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -40,13 +58,27 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
+          <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                  <div class="inner">
+                      <h3><?php echo $row['total_voters']; ?></h3>
+
+                      <p>Total Voters</p>
+                  </div>
+                  <div class="icon">
+                      <i class="ion ion-person-add"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+          </div>
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3><?php echo $row1['total_district']; ?></h3>
 
-              <p>New Orders</p>
+              <p>Total Districts</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -59,9 +91,9 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3><?php echo $row2['total_precinct']; ?></h3>
 
-              <p>Bounce Rate</p>
+              <p>Total Precincts</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -70,28 +102,15 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
 
-              <p>User Registrations</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3><?php echo $row3['total_polling']; ?></h3>
 
-              <p>Unique Visitors</p>
+              <p>Total Polling Places</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -101,9 +120,84 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
         </div>
         <!-- ./col -->
       </div>
+
+        <div class="chart-container">
+            <canvas id="myChart">
+
+            </canvas>
+        </div>
+
+        <script>
+            var ctx = document.getElementById("myChart").getContext('2d');
+            var graphData= {};
+            $.ajax({
+                    type: "GET",
+                    url: "function.php?select=byCountyChart",
+                    success: function(data){
+                        var dataSize =  data.length;
+                        for(var i = 0; i <= dataSize; i++){
+                            graphData.push(data[i].county_name);
+                        }
+                    }
+            });
+            var labels1=  ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
+            console.log(graphData);
+            console.log(labels1);
+
+
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels1,
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+            console.log(myChart);
+        </script>
+
       <!-- /.row -->
       <!-- Main row -->
-      <div class="row">
+      <div class="row"  style="display: none;">
         <!-- Left col -->
         <section class="col-lg-7 connectedSortable">
           <!-- Custom tabs (Charts with tabs)-->
