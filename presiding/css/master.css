@@ -62,3 +62,7 @@
     border-radius: 50%;
     display: inline-block;
 }
+.right-button-align{
+  margin:53px auto 0px auto;
+}
+		#results { float:right; margin-top:0px; padding:20px; border:1px solid; background:#ccc; }

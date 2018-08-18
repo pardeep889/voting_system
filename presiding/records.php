@@ -2,21 +2,24 @@
 include "../db/conn.php";
 include "session.php";
 include "header.php";
+
+
 include "nav.php";
 
 if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ) {
     ?>
+   
     <div class="container">
         <h3 class="large-heading-margin-top text-center">Showing All Voters</h3>
     <div class="table-responsive fixed-min-height pre_background box-table">
-        <table class="table">
+        <table class="table" id="example" class="display">
             <thead class="thead-dark">
             <tr>
                 <th>Voter ID</th>
                 <th>Voter name</th>
                 <th>Age</th>
                 <th>Gender</th>
-                <th>County</th>
+                <!-- <th>County</th> -->
                 <th>Center code</th>
                 <th>Voter Email</th>
                 <th>Valid ?</th>
@@ -35,8 +38,12 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ) {
                 <td><?php echo $voters['voter_name']; ?></td>
                 <td><?php echo $voters['voter_age']; ?></td>
                 <td><?php echo $voters['voter_gender']; ?></td>
-                <td><?php echo $voters['county_name']; ?></td>
-                <td><?php echo $voters['center_code']; ?></td>
+                <!-- <td><?php // echo $voters['county_name']; ?></td> -->
+                <td>
+                <?php 
+                echo  $voters['center_code']; 
+                ?>
+                </td>
                 <td><?php echo $voters['voter_email']; ?></td>
                 <td><?php if($voters['voter_status'] == 1){
                             echo "<span class='text-success'>Valid";
@@ -58,6 +65,14 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ) {
 
     </div>
     </div>
+     
+
+<script>
+    
+    $(document).ready( function () {
+    $('#example').DataTable();
+} );
+    </script>
 
 
 <?php

@@ -5,7 +5,7 @@ include "session.php";
 if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ) {
     $unique = $_GET['id'];
            // $sql = "SELECT * FROM vs_voters where voter_uniqueID = '$unique'";
-$sql = "SELECT u.id,u.voter_address,u.voter_email,u.voter_contactNO,u.center_code,u.center_address,u.voter_status,u.voter_uniqueID,c.county_name,d.district_name,p.precinct_name,po.polling_placeName,u.voter_name,u.voter_gender,u.voter_verifyStatus,u.voter_ballotNO,u.voter_age,c.id as county_id, d.id as district_id, p.id as precinct_id, po.id as polling_placeID FROM vs_voters u
+$sql = "SELECT u.id,u.voter_photo,u.voter_address,u.voter_email,u.voter_contactNO,u.center_code,u.center_address,u.voter_status,u.voter_uniqueID,c.county_name,d.district_name,p.precinct_name,po.polling_placeName,u.voter_name,u.voter_gender,u.voter_verifyStatus,u.voter_ballotNO,u.voter_age,c.id as county_id, d.id as district_id, p.id as precinct_id, po.id as polling_placeID FROM vs_voters u
                     INNER JOIN vs_county c on c.id = u.county_id
                     INNER JOIN vs_district d on d.id = u.district_id
                     INNER JOIN vs_precincts p on p.id = u.precinct_id
@@ -14,11 +14,23 @@ $sql = "SELECT u.id,u.voter_address,u.voter_email,u.voter_contactNO,u.center_cod
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
+    $data =  $row['voter_photo'];
     // echo json_encode($row);
+    // header("Content-type: image/gif");
+    $str2 = substr($data, 23);
+    // echo $str2;
+
     ?>
 
     <div class="container">
     <h2 class="text-center large-heading-margin-top">Update Voter</h2>
+      <!-- <div class="voter_snap text-center">
+        <?php
+          // echo '<img src="data:image/jpeg;base64,'.($str2).'"/>';
+        ?>
+        <br> <br>
+        <a class="btn btn-warning" href="uploadSnap.php?unique=<?php // echo $unique; ?>">Update Snap </a>
+      </div> -->
         <form>
             <div class="form-group">
                 <label>Select County</label>
@@ -108,6 +120,7 @@ if ($result->num_rows > 0) {
             <div class="form_group">
             <br>
               <input type ='button' class="btn btn-warning" onclick="update_voter()" value="Update Voter">
+              <a href="show_voter.php?id=<?php echo $unique; ?>" class="btn btn-danger">Go back</a>
             </div>
         </form>
     </div>

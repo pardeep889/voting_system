@@ -18,7 +18,6 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
       from vs_users u inner join vs_polling pol on u.polling_placeID = pol.id where u.polling_placeID = '$id'";
 
         $result = mysqli_query($conn,$sql);
-
         if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
@@ -50,54 +49,48 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="name">Voter Name <span class="text-danger">*</span></label>
-                            <input type="text" name="voter_name" class="form-control" required>
+                            <!-- <label for="name">Voter Name <span class="text-danger">*</span></label> -->
+                            <input type="text" name="voter_name" placeholder="Voter Name..." class="form-control" required>
                         </div>
 
+                            <div class="form-group">
+                                <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Select Gender<span class="text-danger">*</span></label> -->
+                                <select name="voter_gender" class="form-control" id="inlineFormCustomSelect" required>
+                                  <option value="" selected disabled>Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="age">Voter Age <span class="text-danger">*</span></label> -->
+                                <input type="number" min="12" name="voter_age" class="form-control" placeholder="Voter Age..." required>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="name">Voter Contact No <span class="text-danger">*</span></label> -->
+                                <input type="text" name="voter_contact_no" class="form-control" placeholder="Contact no..." required>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="name">Voter Email</label> -->
+                                <input type="email" name="voter_email" placeholder="Voter Email..." class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="name">Voter Address <span class="text-danger">*</span></label> -->
+                                <textarea name="voter_address" placeholder="Voter Address" rows="3" cols="80" class="form-control" required></textarea>
+                            </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="mr-sm-2" for="inlineFormCustomSelect">Select Gender<span class="text-danger">*</span></label>
-                            <select name="voter_gender" class="form-control" id="inlineFormCustomSelect" required>
-                                <option value="male" selected>Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="age">Voter Age <span class="text-danger">*</span></label>
-                            <input type="number" min="12" name="voter_age" class="form-control" required>
-                        </div>
 
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="name">Voter Email <span class="text-danger">*</span></label>
-                            <input type="email" name="voter_email" class="form-control" required>
-                        </div>
 
-                    </div>
+                    <div class="col-sm-6 text-center right-button-align">
+                      <div class="form-group">
+                          <input type="submit" class="btn btn-success" value="Save Voter">
+                          <a href="pre_dashboard.php" class="btn btn-danger">Cancel</a>
+                      </div>
 
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="name">Voter Address <span class="text-danger">*</span></label>
-                            <textarea name="voter_address" rows="3" cols="80" class="form-control" required></textarea>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="name">Voter Contact No <span class="text-danger">*</span></label>
-                            <input type="text" name="voter_contact_no" class="form-control" required>
-                        </div>
                     </div>
 
                 </div>
-                <div class="row">
+
+                <!-- <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="name">Take Photo</label>
@@ -111,17 +104,8 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
                         </div>
 
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
+                </div> -->
 
-                            <input type="submit" class="btn btn-dark" value="Add new voter">
-                        </div>
-
-                    </div>
-
-                </div>
             </form>
         </div>
     </div>

@@ -1,14 +1,15 @@
 body#LoginForm{
     /*background-image:url("../../img/bg.png");*/
     /*background-repeat:no-repeat;*/
-    /*!*background-color: #DCF3E3;*!*/
+    background-color: #050518;
     /*background-position:center;*/
     background-size:cover;
+
 }
 .homeimage{
     float: left !important;
     padding: 10% 0;
-    background-image: url("../../img/bg.png");
+    background-image: url("../../img/thumb.png");
     background-position: center;
     background-size: cover;
 }

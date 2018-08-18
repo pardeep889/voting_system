@@ -1,7 +1,7 @@
 <?php require "session.php";
 if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
         $id = $_GET['id'];
-        echo $id;
+//        echo $id;
     ?>
     <!DOCTYPE html>
     <html>

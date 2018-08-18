@@ -113,7 +113,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
 
                             }?>
 
-                              <a href="updateVoter.php?id=<?php echo $row['voter_uniqueID']; ?>" class="btn btn-warning btn-sm">Update</a>
+                              <a href="show_voter.php?id=<?php echo $row['voter_uniqueID']; ?>" class="btn btn-warning btn-sm">Show</a>
 
                               <?php if($row['voter_verifyStatus'] == 1){
                                 ?>

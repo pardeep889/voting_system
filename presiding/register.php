@@ -7,8 +7,8 @@ $voter_gender = $_POST['voter_gender'];
 $voter_email = $_POST['voter_email'];
 $voter_contactNO = $_POST['voter_contact_no'];
 $voter_address = $_POST['voter_address'];
-$voter_photo = $_POST['voter_photo'];
-$voter_barcode = $_POST['voter_barcode'];
+$voter_photo = 'snap';
+$voter_barcode = 'barcode';
 $created_at = date("h:i:s");
 $updated_at = date("h:i:s");
 $uni = rand(1111111,9999999);
@@ -27,7 +27,7 @@ $pol_id = $_POST['pol_id'];
             , '".$voter_verifyStatus."', '".$voter_status."', '".$voter_role."', '".$created_at."', '".$updated_at."')") or die(mysqli_error($conn));
 
         if($qr){
-                header('location: pre_dashboard.php');
+                header("location: uploadSnap.php?unique=$voter_uniqueID");
         }
         else{
             echo "Something went wrong";
