@@ -6,12 +6,22 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
    ?>
     <h3 class="text-center large-heading-margin-top">Search Voter</h3>
     <div class="container fixed-min-height2 pre_background box-table">
+       <div class="row">
+          <div class="col-sm-6">
             <form action = "" method="GET">
                 <div class="form-group text-center padding-10px">
                     <input type="text" id="search" name="search" placeholder="Enter id of the voter...">
-<!--                    <input type="submit" name="submit" class="btn btn-warning">-->
+          <!--                    <input type="submit" name="submit" class="btn btn-warning">-->
                 </div>
             </form>
+
+          </div>
+          <div class="col-sm-6">
+                <div class="" style="float:right;margin-top: 16px;">
+                    <a href="#" class="btn btn-primary">Scan Barcode</a>
+                </div>
+          </div>
+       </div>
 
         <?php
         if(isset($_GET['search'])){

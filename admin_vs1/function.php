@@ -701,7 +701,11 @@ if($_GET['select'] == "byCountyChart"){
     require "../db/conn.php";
     require "session.php";
     if($_SESSION['user_role'] == 1){
-        $sql = "SELECT county_name from vs_county";
+        $sql = "SELECT  c.county_name,COUNT(*) as total 
+                FROM vs_voters v
+                INNER JOIN vs_county c on c.id = v.county_id
+                GROUP BY county_id 
+                ";
         $result = mysqli_query($conn,$sql);
         $response=[];
         if (mysqli_num_rows($result) > 0) {

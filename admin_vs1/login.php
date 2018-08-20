@@ -77,6 +77,9 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
                 </div>
             </div>
         </div>
+        <div class="col-sm-12 float-left">
+            <h1 class="text-center" style="color: #FFFFFF;">VOTERS UPDATE AND VERIFICATION SYSTEM</h1>
+        </div>
     </div>
 
 

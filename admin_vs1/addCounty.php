@@ -10,7 +10,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
   <title>Voting System | Dashboard</title>
 	<?php include("pages/includes/head-section.php");?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">Array(6)
 <div class="wrapper">
   <header class="main-header">
     <?php include("pages/includes/header-section.php");?>
@@ -33,7 +33,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
         <li class="active">Dashboard</li>
       </ol>
     </section>
-    <div class="container">
+    <div class="">
       <div class="myNewSection">
       <form class="form-horizontal bucket-form">
         <div class="form-group">

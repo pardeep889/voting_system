@@ -40,3 +40,5 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="../../dist/js/bar.js"></script>

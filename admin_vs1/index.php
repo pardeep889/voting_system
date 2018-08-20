@@ -120,79 +120,104 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 1){
         </div>
         <!-- ./col -->
       </div>
+<!--        --><?php
+//        $sql55 = "SELECT county_name from vs_county LIMIT 10";
+//        $result55 = mysqli_query($conn,$sql55);
+//
+//        while ($row55 = mysql_fetch_array($result55)) {
+//            $data[] = $row55['county_name'];
+//        }
+//        ?>
 
-        <div class="chart-container">
-            <canvas id="myChart">
-
-            </canvas>
-        </div>
+        <div id="container" style="width:100%; height:400px;"></div>
 
         <script>
-            var ctx = document.getElementById("myChart").getContext('2d');
-            var graphData= {};
-            $.ajax({
+            $(document).ready(function () {
+                var graphData = [];
+                var dataVal = [];
+                $.ajax({
                     type: "GET",
                     url: "function.php?select=byCountyChart",
                     success: function(data){
-                        var dataSize =  data.length;
-                        for(var i = 0; i <= dataSize; i++){
-                            graphData.push(data[i].county_name);
+                        for (var prop in data) {
+                            graphData.push(data[prop].county_name);
                         }
+
+                        for (var x in data) {
+                            dataVal.push(parseInt(data[x].total));
+                        }
+                        // console.log(dataVal);
                     }
-            });
-            var labels1=  ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
-            console.log(graphData);
-            console.log(labels1);
+
+                });
+
+                setTimeout( function(){
+                    var chart = Highcharts.chart('container', {
+
+                        title: {
+                            text: 'Chart'
+                        },
+
+                        subtitle: {
+                            text: 'Number of Registrations Processed by County'
+                        },
+
+                        xAxis: {
+                            categories: graphData
+                        },
 
 
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels1,
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero:true
-                            }
+                        series: [{
+                            type: 'column',
+                            name: 'Voters',
+                            colorByPoint: true,
+                            data: dataVal,
+                            showInLegend: false
                         }]
-                    }
-                }
+                    });
+
+                    $('#plain').click(function () {
+                        chart.update({
+                            chart: {
+                                inverted: false,
+                                polar: false
+                            },
+                            subtitle: {
+                                text: 'Plain'
+                            }
+                        });
+                    });
+
+                    $('#inverted').click(function () {
+                        chart.update({
+                            chart: {
+                                inverted: true,
+                                polar: false
+                            },
+                            subtitle: {
+                                text: 'Inverted'
+                            }
+                        });
+                    });
+
+                    $('#polar').click(function () {
+                        chart.update({
+                            chart: {
+                                inverted: false,
+                                polar: true
+                            },
+                            subtitle: {
+                                text: 'Polar'
+                            }
+                        });
+                    });
+                }, 1500 );
+
+                // console.log(ddd);
+
             });
-            console.log(myChart);
+
+
         </script>
 
       <!-- /.row -->

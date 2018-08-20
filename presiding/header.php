@@ -11,22 +11,24 @@
     <link href="../css/small-business.css" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/login.css">
- 
+
     <!-- <script
       src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"></script> -->
-      
-     
-      
 
       <script type="text/javascript" src="js/sweet.js"></script>
       <script type="text/javascript" src="js/cam.js"> </script>
       <link href="css/master.css" rel="stylesheet">
       <script src="js/jQuery.js" ></script>
-      <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>  
+      <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
       <script type="text/javascript" src="js/pre.js"></script>
-      
+
+      <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jsbarcode/3.3.20/JsBarcode.all.min.js"> </script> -->
+      <script type="text/javascript" src="js/bar.js">
+
+      </script>
+
   </head>
 <?php include "../db/conn.php";
  ?>

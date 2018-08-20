@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
     $data =  $row['voter_photo'];
     // echo json_encode($row);
     // header("Content-type: image/gif");
-    $str2 = substr($data, 23);
+    // $str2 = substr($data, 23);
     // echo $str2;
 
     ?>
@@ -67,7 +67,7 @@ if ($result->num_rows > 0) {
         <div class="col-sm-4">
           <div class="voter_snap text-center">
             <?php
-              echo '<img src="data:image/jpeg;base64,'.($str2).'"/>';
+              echo '<img src="'.($data).'"/>';
             ?>
             <br> <br>
             <a class="btn btn-warning" href="uploadSnap.php?unique=<?php echo $unique; ?>">Update Snap </a>
@@ -76,7 +76,30 @@ if ($result->num_rows > 0) {
 
         <a href="updateVoter.php?id=<?php echo $unique; ?>" class="btn btn-success">Update Record</a>
         <!-- <input type ='button' class="btn btn-warning" onclick="update_voter()" value="Update Voter"> -->
-
+          <div class="text-center">
+            <svg id="code128"></svg>
+            <svg id="ean-13"></svg>
+            <svg id="ean-8"></svg>
+            <svg id="ean-5"></svg>
+            <svg id="ean-2"></svg>
+            <svg id="upc-a"></svg>
+            <svg id="code39"></svg>
+            <svg id="itf-14"></svg>
+            <svg id="msi"></svg>
+            <svg id="pharmacode"></svg>
+          </div>
+          <script type="text/javascript">
+          JsBarcode("#code128", "Hi!");
+          JsBarcode("#ean-13", "1234567890128", {format: "ean13"});
+          JsBarcode("#ean-8", "12345670", {format: "ean8"});
+          JsBarcode("#ean-5", "12345", {format: "ean5"});
+          JsBarcode("#ean-2", "12", {format: "ean2"});
+          JsBarcode("#upc-a", "123456789012", {format: "upc"});
+          JsBarcode("#code39", "Hello", {format: "code39"});
+          JsBarcode("#itf-14", "1234567890123", {format: "itf14"});
+          JsBarcode("#msi", "123456", {format: "msi"});
+          JsBarcode("#pharmacode", "12345", {format: "pharmacode"});
+          </script>
       </div>
 
         <!-- <form>
@@ -170,7 +193,7 @@ if ($result->num_rows > 0) {
 
             </div>
         </form> -->
-    </div>  
+    </div>
     <?php
 }
     include "footer.php";
