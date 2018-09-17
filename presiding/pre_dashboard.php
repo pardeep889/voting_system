@@ -237,7 +237,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
               data: data,
               success: function(data){
                 if(data.message == "success"){
-                  swal("Flagged", "Voter has been Verified successfully !", "success")
+                  swal("Verified", "Voter has been Verified successfully !", "success")
                        .then((value) => {
                            if(value == ""){
                                location.reload();
@@ -266,7 +266,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
       var ballot = $("#ballot").val();
       swal({
           title: "Are you sure?",
-          text: "You are Ready to verify the voter ?",
+          text: "You are Ready to issue the Ballot no. ?",
           icon: "warning",
           buttons: true,
           dangerMode: true,
@@ -280,7 +280,7 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
               data: data,
               success: function(data){
                 if(data.message == "success"){
-                  swal("Flagged", "Voter has been Verified successfully !", "success")
+                     swal("Ballot Number Alloted", "Voter has been allotted with ballot no. successfully !", "success")
                        .then((value) => {
                            if(value == ""){
                                location.reload();

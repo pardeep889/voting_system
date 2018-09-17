@@ -3,73 +3,69 @@ include "header.php";
 include "nav.php";
 include "session.php";
 include "../db/conn.php";
-if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
-$unique = $_GET['unique'];
 
+if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3){
+  $unique = $_GET['unique'];
+
+  if(isset($_POST['uploadFILE'])){
+    // echo "test"; die;
+    $file = addslashes(file_get_contents($_FILES['imagefile']['tmp_name']));
+    $sql = "UPDATE vs_voters SET voter_photo = '$file' WHERE voter_uniqueID = '$unique'";
+    if($conn->query($sql) === TRUE){
+      $previous = "javascript:history.go(-1)";
+        if(isset($_SERVER['HTTP_REFERER'])) {
+           $previous = $_SERVER['HTTP_REFERER'];
+        }
+    }else{
+      echo "<script>alert(Something went wrong please try again)</script>";
+    }
+
+  }
 ?>
 <div class="container fixed-min-height">
     <h2 class="text-center large-heading-margin-top">Upload Voter Image</h2>
+    <form method="post" enctype="multipart/form-data">
+      <div class="form-group text-center">
+        <input type="file" name='imagefile' id='image' class="form-control" accept="image/*;capture=camera"> <br>
+        <input type="submit" name="uploadFILE" value="Upload New Image" id="uploadSnap" class="btn btn-warning" >
+      </div>
+    </form>
 
-<input type="hidden" id="unique" value="<?php echo $unique ?>">
-<div class="text-center">
-<div id="results">Your captured image will appear here...</div>
-
+    <div class="text-center">
+        <?php
+            $sql1 = "SELECT voter_photo from vs_voters WHERE voter_uniqueID = '$unique'";
+            $result1 = $conn->query($sql1);
+            $row1 = $result1->fetch_assoc();
+            ?>
+              <div class="container">
+                <div class="text-center">
+                  <?php
+                  echo '<img height ="50%" src="data:/image/jpeg;base64,'.base64_encode($row1['voter_photo']).'"/>';
+                  ?>
+                </div>
+              </div>
+    </div>
 </div>
 
-  <!-- <h1>Voter Image</h1> -->
-  	<div id="my_camera" style="margin-top:60px;"></div>
-  	<!-- First, include the Webcam.js JavaScript Library -->
-  	<!-- <script type="text/javascript" src="../webcam.min.js"></script> -->
-  	<!-- Configure a few settings and attach camera -->
-  	<script language="JavaScript">
-  		Webcam.set({
-  			width: 320,
-  			height: 240,
-  			image_format: 'jpeg',
-  			jpeg_quality: 90
-  		});
-  		Webcam.attach( '#my_camera' );
-  	</script>
 
-  	<!-- A button for taking snaps -->
-  	<form>
-      <br>
-  		<input type=button value="Take Snapshot" class="btn btn-success" onClick="take_snapshot()">
-      <a href="uploadFingerprint.php?unique=<?php echo $unique; ?>" class="btn btn-danger">Skip</a>
-  	</form>
 
-  	<!-- Code to handle taking the snapshot and displaying it locally -->
-  	<script language="JavaScript">
-  		function take_snapshot() {
-  			// take snapshot and get image data
-  			Webcam.snap( function(data_uri) {
-  				// display results in page
-  				document.getElementById('results').innerHTML =
-  					'<h2 class="text-center">Voter Image</h2>' +
-  					'<img id="voter_snap" src="'+data_uri+'"/>'+
-            '<br><br><button class="btn btn-primary" onclick="saveSnap()">Save Snap</button>';
-  			} );
-  		}
-      function saveSnap(){
-        var image_data = $("#voter_snap").attr("src");
-        var unique = $("#unique").val();
-        var data = {"unique": unique, "image_data": image_data, "select": "saveSnap"};
-        $.ajax({
-          type:"POST",
-          url: "postFunction.php",
-          data: data,
-          success: function(data){
-            if(data.message == "success"){
-                window.location = 'uploadFingerprint.php?unique='+data.unique;
-            }else{
-                swal("Something went wrong !", "Please try Again with","error");
+<script type="text/javascript">
+      $('#uploadSnap').click(function(){
+          var image_data = $("#image").val();
+          // console.log(image_data);
+          if(image_data==''){
+            swal("Please select an image","error");
+            return false;
+          }
+          else{
+            var ext = $('#image').val().split('.').pop().toLowerCase();
+            if(jQuery.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1){
+                  swal("This is not an image","error");
+                  $('#image').val('');
             }
           }
-        });
-      }
-
-  	</script>
-</div>
+      });
+</script>
 
 <?php
 include "footer.php";

@@ -313,10 +313,11 @@ $voter_age = $_GET['voter_age'];
 $email = $_GET['email'];
 $number = $_GET['number'];
 $voter_address = $_GET['voter_address'];
+$barcode = $_GET['barcode'];
      if($_SESSION['user_role'] == 3){
        $sql = "UPDATE vs_voters SET county_id = '$c_id',district_id = '$d_id', precinct_id='$p_id',polling_placeID = '$pol_id', center_code = '$center',
                 center_address = '$center_address', voter_name ='$name', voter_gender = '$gender', 	voter_age = '$voter_age', voter_email = '$email', voter_contactNO = '$number',
-                voter_address = '$voter_address', voter_verifyStatus	= 2
+                voter_address = '$voter_address', voter_barcode = '$barcode', voter_verifyStatus	= 2
              where voter_uniqueID = '$unique'";
      if ($conn->query($sql) === TRUE) {
           $response['message'] = "success";

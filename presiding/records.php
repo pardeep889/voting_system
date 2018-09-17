@@ -8,7 +8,7 @@ include "nav.php";
 
 if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ) {
     ?>
-   
+
     <div class="container">
         <h3 class="large-heading-margin-top text-center">Showing All Voters</h3>
     <div class="table-responsive fixed-min-height pre_background box-table">
@@ -26,13 +26,14 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ) {
 
             </tr>
             </thead>
-            <?php
-            $data = mysqli_query($conn,"CALL getVoters()") or die(mysqli_error($conn));
-                while($voters = mysqli_fetch_assoc($data))
-                {
-//                    echo json_encode($voters);
-                ?>
+
             <tbody>
+              <?php
+              $data = mysqli_query($conn,"CALL getVoters()") or die(mysqli_error($conn));
+                  while($voters = mysqli_fetch_assoc($data))
+                  {
+  //                    echo json_encode($voters);
+                  ?>
             <tr>
                 <td><?php echo $voters['voter_uniqueID']; ?></td>
                 <td><?php echo $voters['voter_name']; ?></td>
@@ -40,8 +41,8 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ) {
                 <td><?php echo $voters['voter_gender']; ?></td>
                 <!-- <td><?php // echo $voters['county_name']; ?></td> -->
                 <td>
-                <?php 
-                echo  $voters['center_code']; 
+                <?php
+                echo  $voters['center_code'];
                 ?>
                 </td>
                 <td><?php echo $voters['voter_email']; ?></td>
@@ -57,24 +58,26 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ) {
                         ?></td>
 
             </tr>
+            <?php
+                }
+            ?>
             </tbody>
-                    <?php
-                        }
-                    ?>
+
         </table>
 
-    </div>
-    </div>
-     
 
-<script>
-    
-    $(document).ready( function () {
-    $('#example').DataTable();
-} );
+    </div>
+    </div>
+
+
+
+
+    <script>
+    $(document).ready(function() {
+      $('#example').DataTable( {
+          });
+      });
     </script>
-
-
 <?php
 }
 else{

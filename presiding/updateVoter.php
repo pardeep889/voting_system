@@ -5,7 +5,7 @@ include "session.php";
 if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ) {
     $unique = $_GET['id'];
            // $sql = "SELECT * FROM vs_voters where voter_uniqueID = '$unique'";
-$sql = "SELECT u.id,u.voter_photo,u.voter_address,u.voter_email,u.voter_contactNO,u.center_code,u.center_address,u.voter_status,u.voter_uniqueID,c.county_name,d.district_name,p.precinct_name,po.polling_placeName,u.voter_name,u.voter_gender,u.voter_verifyStatus,u.voter_ballotNO,u.voter_age,c.id as county_id, d.id as district_id, p.id as precinct_id, po.id as polling_placeID FROM vs_voters u
+$sql = "SELECT u.id,u.voter_barcode,u.voter_photo,u.voter_address,u.voter_email,u.voter_contactNO,u.center_code,u.center_address,u.voter_status,u.voter_uniqueID,c.county_name,d.district_name,p.precinct_name,po.polling_placeName,u.voter_name,u.voter_gender,u.voter_verifyStatus,u.voter_ballotNO,u.voter_age,c.id as county_id, d.id as district_id, p.id as precinct_id, po.id as polling_placeID FROM vs_voters u
                     INNER JOIN vs_county c on c.id = u.county_id
                     INNER JOIN vs_district d on d.id = u.district_id
                     INNER JOIN vs_precincts p on p.id = u.precinct_id
@@ -117,6 +117,10 @@ if ($result->num_rows > 0) {
               <label>Voter Address</label>
                 <textarea id="voter_address" class="form-control"><?php echo $row['voter_address'] ?></textarea>
             </div>
+            <div class="form-group">
+                <label>Barcode</label>
+                <input type="text" class="form-control" value="<?php echo $row['voter_barcode'] ?>" id="barcode">
+            </div>
             <div class="form_group">
             <br>
               <input type ='button' class="btn btn-warning" onclick="update_voter()" value="Update Voter">
@@ -139,9 +143,10 @@ if ($result->num_rows > 0) {
     var email = $("#email").val();
     var number = $("#number").val();
     var voter_address = $("#voter_address").val();
+    var voter_barcode = $("#barcode").val();
     // alert(c_id+d_id+p_id+pol_id+center+center_address+name+gender+voter_age+email+number+voter_address);
     var data = { "unique": unique,"c_id": c_id, "d_id": d_id, "p_id": p_id, "pol_id":pol_id, "center": center, "center_address": center_address, "name": name,
-                  "gender": gender, "voter_age": voter_age, "email": email, "number": number, "voter_address": voter_address  };
+                  "gender": gender, "voter_age": voter_age, "email": email, "number": number, "voter_address": voter_address, "barcode": voter_barcode  };
 
       if(d_id == null){
           swal("Please select District");

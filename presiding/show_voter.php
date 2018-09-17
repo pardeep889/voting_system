@@ -67,9 +67,10 @@ if ($result->num_rows > 0) {
         <div class="col-sm-4">
           <div class="voter_snap text-center">
             <?php
-              echo '<img src="'.($data).'"/>';
+              echo '<img width="100%" height ="50%" src="data:/image/jpeg;base64,'.base64_encode($data).'"/>';
             ?>
             <br> <br>
+
             <a class="btn btn-warning" href="uploadSnap.php?unique=<?php echo $unique; ?>">Update Snap </a>
           </div>
         </div>
