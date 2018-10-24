@@ -1,0 +1,36 @@
+﻿2018-04-13 12:01:29.364 INFO  - Starting container for site
+2018-04-13 12:01:29.364 INFO  - docker run -d -p 28856:8080 --name groupstart_0 -e WEBSITE_NODE_DEFAULT_VERSION=9.4 -e APPSETTING_WEBSITE_NODE_DEFAULT_VERSION=9.4 -e WEBSITE_SITE_NAME=groupstart -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_INSTANCE_ID=babb1fdcd78d3e047e08c5c6d45c466a0f35f297737d421bab1adc276c54b99e appsvc/node:9.4.0_1801182239  
+
+2018-04-13 12:01:29.364 INFO  - Logging is not enabled for this container.
+Please use https://aka.ms/linux-diagnostics to enable logging to see container logs here.
+2018-04-13 12:01:47.634 INFO  - Container groupstart_0 for site groupstart initialized successfully.
+2018-04-13 12:05:44.763 INFO  - Starting container for site
+2018-04-13 12:05:44.763 INFO  - docker run -d -p 54799:8080 --name groupstart_1 -e WEBSITE_NODE_DEFAULT_VERSION=9.4 -e APPSETTING_WEBSITE_NODE_DEFAULT_VERSION=9.4 -e WEBSITE_SITE_NAME=groupstart -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_INSTANCE_ID=babb1fdcd78d3e047e08c5c6d45c466a0f35f297737d421bab1adc276c54b99e appsvc/node:9.4.0_1801182239  
+
+2018-04-13 12:05:44.763 INFO  - Logging is not enabled for this container.
+Please use https://aka.ms/linux-diagnostics to enable logging to see container logs here.
+2018-04-13 12:05:59.619 INFO  - Container groupstart_1 for site groupstart initialized successfully.
+2018-04-13 12:09:37.337 INFO  - Starting container for site
+2018-04-13 12:09:37.339 INFO  - docker run -d -p 52404:8080 --name groupstart_2 -e WEBSITE_NODE_DEFAULT_VERSION=9.4 -e APPSETTING_WEBSITE_NODE_DEFAULT_VERSION=9.4 -e WEBSITE_SITE_NAME=groupstart -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_INSTANCE_ID=babb1fdcd78d3e047e08c5c6d45c466a0f35f297737d421bab1adc276c54b99e appsvc/node:9.4.0_1801182239  
+
+2018-04-13 12:09:37.339 INFO  - Logging is not enabled for this container.
+Please use https://aka.ms/linux-diagnostics to enable logging to see container logs here.
+2018-04-13 12:09:50.472 INFO  - Container groupstart_2 for site groupstart initialized successfully.
+2018-04-13 12:21:18.532 INFO  - Starting container for site
+2018-04-13 12:21:18.539 INFO  - docker run -d -p 30953:8080 --name groupstart_3 -e WEBSITE_NODE_DEFAULT_VERSION=9.4 -e APPSETTING_WEBSITE_NODE_DEFAULT_VERSION=9.4 -e WEBSITE_SITE_NAME=groupstart -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_INSTANCE_ID=babb1fdcd78d3e047e08c5c6d45c466a0f35f297737d421bab1adc276c54b99e appsvc/node:9.4.0_1801182239  
+
+2018-04-13 12:21:18.540 INFO  - Logging is not enabled for this container.
+Please use https://aka.ms/linux-diagnostics to enable logging to see container logs here.
+2018-04-13 12:21:43.324 INFO  - Container groupstart_3 for site groupstart initialized successfully.
+2018-04-13 12:46:20.782 INFO  - Starting container for site
+2018-04-13 12:46:20.783 INFO  - docker run -d -p 19529:8080 --name groupstart_4 -e WEBSITE_NODE_DEFAULT_VERSION=9.4 -e APPSETTING_WEBSITE_NODE_DEFAULT_VERSION=9.4 -e WEBSITE_SITE_NAME=groupstart -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_INSTANCE_ID=babb1fdcd78d3e047e08c5c6d45c466a0f35f297737d421bab1adc276c54b99e appsvc/node:9.4.0_1801182239  
+
+2018-04-13 12:46:20.788 INFO  - Logging is not enabled for this container.
+Please use https://aka.ms/linux-diagnostics to enable logging to see container logs here.
+2018-04-13 12:46:34.646 INFO  - Container groupstart_4 for site groupstart initialized successfully.
+2018-04-13 12:53:41.344 INFO  - Starting container for site
+2018-04-13 12:53:41.346 INFO  - docker run -d -p 41785:8080 --name groupstart_5 -e WEBSITE_NODE_DEFAULT_VERSION=9.4 -e APPSETTING_WEBSITE_NODE_DEFAULT_VERSION=9.4 -e WEBSITE_SITE_NAME=groupstart -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_INSTANCE_ID=babb1fdcd78d3e047e08c5c6d45c466a0f35f297737d421bab1adc276c54b99e appsvc/node:9.4.0_1801182239  
+
+2018-04-13 12:53:41.347 INFO  - Logging is not enabled for this container.
+Please use https://aka.ms/linux-diagnostics to enable logging to see container logs here.
+2018-04-13 12:53:56.279 INFO  - Container groupstart_5 for site groupstart initialized successfully.

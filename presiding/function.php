@@ -87,14 +87,13 @@ if($_GET['select'] == 'forgot_request') {
     try {
         if(empty($_SESSION['otp'])){
             $otp = rand(11111,99999);
-            $_SESSION['otp']= $otp;
-
+            $_SESSION['otp']= $otp; 
             $mail->SMTPDebug = 2;                                 // Enable verbose debug output
             $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
             $mail->Username = 'pardeepprotolabz@gmail.com';                 // SMTP username
-            $mail->Password = '********';                           // SMTP password
+            $mail->Password = 'Protolabz@123';                           // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;
             $mail->setFrom("pardeep889@hotmail.com", 'pardeep test');
@@ -121,7 +120,6 @@ if($_GET['select'] == 'forgot_request') {
             header("content-type:application/json");
             echo json_encode($data);
         }
-
     } catch (Exception $e) {
         echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
         $data['message']= 'fails';

@@ -23,85 +23,78 @@ if ($result->num_rows > 0) {
     ?>
 
     <div class="container fixed-min-height">
-    <h2 class="text-center large-heading-margin-top">Show Voter</h2>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="">
-                <strong>Name: </strong> <?php echo ucfirst($row['voter_name']); ?>
-          </div>
-          <div class="">
-                <strong>Gender: </strong> <?php echo ucfirst($row['voter_gender']); ?>
-          </div>
-          <div class="">
-                <strong>Age: </strong> <?php echo ucfirst($row['voter_age']); ?>
-          </div>
-          <div class="">
-                <strong>Contact No: </strong> <?php echo ucfirst($row['voter_contactNO']); ?>
-          </div>
-          <div class="">
-                <strong>E-mail: </strong> <?php echo ($row['voter_email']); ?>
-          </div>
-          <div class="">
-                <strong>Address: </strong> <?php echo ucfirst($row['voter_address']); ?>
-          </div>
-          <div class="">
-                <strong>Center Code: </strong><?php echo $row['center_code'];?>
-          </div>
-          <div class="">
-                <strong>Center Address: </strong> <?php echo ucfirst($row['center_address']); ?>
-          </div>
-          <div class="">
-                <strong>County: </strong> <?php echo ucfirst($row['county_name']); ?>
-          </div>
-          <div class="">
-                <strong>District: </strong> <?php echo ucfirst($row['district_name']); ?>
-          </div>
-          <div class="">
-                <strong>Precinct: </strong> <?php echo ucfirst($row['precinct_name']); ?>
-          </div>
-          <div class="">
-                <strong>Polling Center: </strong> <?php echo ucfirst($row['polling_placeName']); ?>
-          </div>
+        <h2 class="text-center large-heading-margin-top">Show Voter</h2>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="">
+                        <strong>Name: </strong> <?php echo ucfirst($row['voter_name']); ?>
+                </div>
+                <div class="">
+                        <strong>Gender: </strong> <?php echo ucfirst($row['voter_gender']); ?>
+                </div>
+                <div class="">
+                        <strong>Age: </strong> <?php echo ucfirst($row['voter_age']); ?>
+                </div>
+                <div class="">
+                        <strong>Contact No: </strong> <?php echo ucfirst($row['voter_contactNO']); ?>
+                </div>
+                <div class="">
+                        <strong>E-mail: </strong> <?php echo ($row['voter_email']); ?>
+                </div>
+                <div class="">
+                        <strong>Address: </strong> <?php echo ucfirst($row['voter_address']); ?>
+                </div>
+                <div class="">
+                        <strong>Center Code: </strong><?php echo $row['center_code'];?>
+                </div>
+                <div class="">
+                        <strong>Center Address: </strong> <?php echo ucfirst($row['center_address']); ?>
+                </div>
+                <div class="">
+                        <strong>County: </strong> <?php echo ucfirst($row['county_name']); ?>
+                </div>
+                <div class="">
+                        <strong>District: </strong> <?php echo ucfirst($row['district_name']); ?>
+                </div>
+                <div class="">
+                        <strong>Precinct: </strong> <?php echo ucfirst($row['precinct_name']); ?>
+                </div>
+                <div class="">
+                        <strong>Polling Center: </strong> <?php echo ucfirst($row['polling_placeName']); ?>
+                </div>
 
+            </div>
+            <div class="col-sm-4">
+                <div class="voter_snap text-center">
+                    <?php
+                    echo '<img width="100%" height ="50%" src="data:/image/jpeg;base64,'.base64_encode($data).'"/>';
+                    ?>
+                    <br> <br>
+
+                    <a class="btn btn-warning" href="uploadSnap.php?unique=<?php echo $unique; ?>">Update Snap </a>
+                </div>
+            </div>
+       </div>
+
+        <div class="row m-2">
+            <div class="col-lg-6">
+                <a href="updateVoter.php?id=<?php echo $unique; ?>" class="btn btn-success" style="height: 10%;">
+                Update Record</a>
+            </div>
+            
+            <!-- <input type ='button' class="btn btn-warning" onclick="update_voter()" value="Update Voter"> -->
+            <div class="col-lg-6">
+                
+                    <svg id="code128"></svg>
+                
+            </div>
+            
         </div>
-        <div class="col-sm-4">
-          <div class="voter_snap text-center">
-            <?php
-              echo '<img width="100%" height ="50%" src="data:/image/jpeg;base64,'.base64_encode($data).'"/>';
-            ?>
-            <br> <br>
-
-            <a class="btn btn-warning" href="uploadSnap.php?unique=<?php echo $unique; ?>">Update Snap </a>
-          </div>
-        </div>
-
-        <a href="updateVoter.php?id=<?php echo $unique; ?>" class="btn btn-success">Update Record</a>
-        <!-- <input type ='button' class="btn btn-warning" onclick="update_voter()" value="Update Voter"> -->
-          <div class="text-center">
-            <svg id="code128"></svg>
-            <svg id="ean-13"></svg>
-            <svg id="ean-8"></svg>
-            <svg id="ean-5"></svg>
-            <svg id="ean-2"></svg>
-            <svg id="upc-a"></svg>
-            <svg id="code39"></svg>
-            <svg id="itf-14"></svg>
-            <svg id="msi"></svg>
-            <svg id="pharmacode"></svg>
-          </div>
+        
           <script type="text/javascript">
-          JsBarcode("#code128", "Hi!");
-          JsBarcode("#ean-13", "1234567890128", {format: "ean13"});
-          JsBarcode("#ean-8", "12345670", {format: "ean8"});
-          JsBarcode("#ean-5", "12345", {format: "ean5"});
-          JsBarcode("#ean-2", "12", {format: "ean2"});
-          JsBarcode("#upc-a", "123456789012", {format: "upc"});
-          JsBarcode("#code39", "Hello", {format: "code39"});
-          JsBarcode("#itf-14", "1234567890123", {format: "itf14"});
-          JsBarcode("#msi", "123456", {format: "msi"});
-          JsBarcode("#pharmacode", "12345", {format: "pharmacode"});
+             JsBarcode("#code128",<?php echo $_GET['id']; ?> , {format: "code128"});
           </script>
-      </div>
+    </div>
 
         <!-- <form>
             <div class="form-group">
@@ -194,12 +187,17 @@ if ($result->num_rows > 0) {
 
             </div>
         </form> -->
-    </div>
     <?php
 }
+elseif($result->num_rows === 0)
+{
+    echo "<h1 style='text-align: center;'>User not valid</h1>";
     include "footer.php";
 }
+}
 else{
+    // echo "<h1 style='text-align: center;'>User not valid</h1>";
+    // include "footer.php";
     header("location: login.php");
 }
-    ?>
+?>

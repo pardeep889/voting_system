@@ -73,18 +73,18 @@
                   <li class="active"><a href="viewCandidate.php"><i class="fa fa-circle-o"></i> View Candidate</a></li>
               </ul>
           </li>
-<!--          <li class=" treeview">-->
-<!--              <a href="#">-->
-<!--                  <i class="fa fa-dashboard"></i> <span>Manage Voter</span>-->
-<!--                  <span class="pull-right-container">-->
-<!--              <i class="fa fa-angle-left pull-right"></i>-->
-<!--            </span>-->
-<!--              </a>-->
-<!--              <ul class="treeview-menu">-->
-<!--                  <li class="active"><a href="addVoter.php"><i class="fa fa-circle-o"></i> Add Voter</a></li>-->
-<!--                  <li class="active"><a href="viewVoter.php"><i class="fa fa-circle-o"></i> View Voter</a></li>-->
-<!--              </ul>-->
-<!--          </li>-->
+         <li class=" treeview">
+             <a href="#">
+                 <i class="fa fa-dashboard"></i> <span>Manage Voter</span>
+                 <span class="pull-right-container">
+             <i class="fa fa-angle-left pull-right"></i>
+           </span>
+             </a>
+             <ul class="treeview-menu">
+                 <li class="active"><a href="addPresiding.php"><i class="fa fa-circle-o"></i> Add Voter</a></li>
+                 <li class="active"><a href="viewVoter.php"><i class="fa fa-circle-o"></i> View Voter</a></li>
+             </ul>
+         </li>
 <!--        <li class="treeview">-->
 <!--          <a href="#">-->
 <!--            <i class="fa fa-files-o"></i>-->

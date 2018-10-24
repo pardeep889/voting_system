@@ -11,14 +11,15 @@ if(!empty($_SESSION['id']) && $_SESSION['user_role'] == 3 ){
             <form action = "" method="GET">
                 <div class="form-group text-center padding-10px">
                     <input type="text" id="search" name="search" placeholder="Enter id of the voter...">
-          <!--                    <input type="submit" name="submit" class="btn btn-warning">-->
+                    
                 </div>
+                <div class="form-grou text-center"><input type="submit" name="submit" class="btn btn-warning"></div>
             </form>
 
           </div>
           <div class="col-sm-6">
                 <div class="" style="float:right;margin-top: 16px;">
-                    <a href="#" class="btn btn-primary">Scan Barcode</a>
+                    <a href="intent:#Intent;action=com.barcodescanner.votingsystem;category=android.intent.category.DEFAULT;category=android.intent.category.BROWSABLE;S.msg_from_browser=Launched%20from%20Browser;end" class="btn btn-primary">Scan Barcode</a>
                 </div>
           </div>
        </div>
